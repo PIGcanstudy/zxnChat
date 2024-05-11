@@ -1,0 +1,52 @@
+# 忽略 Visual Studio 生成的文件夹
+.vs
+Debug
+x64
+
+# 忽略编译产物和临时文件
+/bin/
+/obj/
+/Debug/
+/Release/
+
+# 忽略用户特定配置文件
+*.suo
+*.user
+*.userprefs
+*.sln.docstates
+
+# 忽略依赖管理和包文件
+/packages/
+
+# 忽略日志和调试文件
+/logs/
+*.log
+
+# 忽略操作系统或 IDE 生成的文件
+.DS_Store
+Thumbs.db
+
+# 忽略本地设置和缓存文件
+*.sdf
+*.sqlite
+*.db
+
+# 忽略 Qt Creator 生成的构建目录
+/build/
+/debug/
+/release/
+
+# 忽略编译产物和二进制文件
+/bin/
+/lib/
+
+# 忽略 Qt 自动生成的资源文件
+qrc_*.cpp
+
+# 忽略临时文件和缓存文件
+.qmake.stash
+.qmake.cache
+
+
+
+

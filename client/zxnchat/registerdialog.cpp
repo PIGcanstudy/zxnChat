@@ -34,6 +34,11 @@ void RegisterDialog::on_get_code_clicked()
     bool match = regex.match(email).hasMatch();
     if(match){
         //匹配的话发送验证码
+        //发送http请求获取验证码
+        QJsonObject json_obj;
+        json_obj["email"] = email;
+        Httpmgr::GetInstance()->PostHttpReq(QUrl(gate_url_prefix+"/get_varifycode"),
+                                            json_obj, ReqId::ID_GET_VARIFY_CODE,Modules::REGISTERMOD);
     }else{
         showTip(tr("邮箱地址不正确"), false);
     }
@@ -81,7 +86,7 @@ void RegisterDialog::showTip(QString str, bool b_ok)
 void RegisterDialog::initHttpHandlers()
 {
     //注册回去验证码回包逻辑
-    _handlers.insert(ReqId::ID_GET_VARIFY_COODE,[this](const QJsonObject& jsonObj){
+    _handlers.insert(ReqId::ID_GET_VARIFY_CODE,[this](const QJsonObject& jsonObj){
         int error = jsonObj["error"].toInt();
         if(error != ErrorCodes::SUCCESS){
             showTip(tr("参数错误"), false);

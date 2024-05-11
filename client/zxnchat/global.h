@@ -12,7 +12,7 @@
 //QT的json反序列化
 #include <QJsonDocument>
 
-
+#include <QSettings>
 /**
  * @brief repolish 用来刷新qss的
  */
@@ -22,7 +22,7 @@ extern std::function<void(QWidget*)> repolish;
  * @brief The ReqId enum 请求id
  */
 enum ReqId{
-    ID_GET_VARIFY_COODE = 1001, //获取验证码
+    ID_GET_VARIFY_CODE = 1001, //获取验证码
     ID_REG_USER = 1002, // 用户注册
 };
 
@@ -43,4 +43,5 @@ enum ErrorCodes{
     ERR_NETWORK = 2,//网络错误
 };
 
+extern QString gate_url_prefix;
 #endif // GLOBAL_H

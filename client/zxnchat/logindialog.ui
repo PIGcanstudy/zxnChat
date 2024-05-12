@@ -132,6 +132,9 @@
            <height>25</height>
           </size>
          </property>
+         <property name="text">
+          <string>ssss</string>
+         </property>
         </widget>
        </item>
       </layout>

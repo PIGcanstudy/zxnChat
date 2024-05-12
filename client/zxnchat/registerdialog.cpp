@@ -2,6 +2,7 @@
 #include "ui_registerdialog.h"
 #include "global.h"
 #include "httpmgr.h"
+
 RegisterDialog::RegisterDialog(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::RegisterDialog)
@@ -37,8 +38,10 @@ void RegisterDialog::on_get_code_clicked()
         //发送http请求获取验证码
         QJsonObject json_obj;
         json_obj["email"] = email;
+        //发送请求
         Httpmgr::GetInstance()->PostHttpReq(QUrl(gate_url_prefix+"/get_varifycode"),
                                             json_obj, ReqId::ID_GET_VARIFY_CODE,Modules::REGISTERMOD);
+        qDebug() << gate_url_prefix;
     }else{
         showTip(tr("邮箱地址不正确"), false);
     }
@@ -61,7 +64,7 @@ void RegisterDialog::slot_reg_mod_finish(ReqId id, QString res, ErrorCodes err)
     }
 
     //json解析了，但是格式错误
-    if(jsonDoc.isObject()){
+    if(!jsonDoc.isObject()){
         showTip(tr("json解析错误"), false);
         return;
     }
@@ -93,7 +96,7 @@ void RegisterDialog::initHttpHandlers()
             return;
         }
         auto email = jsonObj["email"].toString();
-        showTip(tr("验证码已发送到邮箱，请注意查收"), true);
+        showTip(tr("验证码已发送,请注意查收"), true);
         qDebug() << "email is" << email;
     });
 

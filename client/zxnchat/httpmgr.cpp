@@ -32,12 +32,13 @@ void Httpmgr::PostHttpReq(QUrl url, QJsonObject json, ReqId req_id, Modules mod)
         // 处理错误的情况：如果网络回复的错误代码不是 NoError，则表示发生了错误
         if(reply->error() != QNetworkReply::NoError){
             qDebug() << reply->errorString();
+
             // 发送信号通知完成，并传递错误代码和模块信息
             emit self->sig_http_finish(req_id,"", ErrorCodes::ERR_NETWORK, mod);
             // 删除网络回复对象，避免内存泄漏
             reply->deleteLater();
             return;
-        }
+        }qDebug() << "你好";
         // 处理正确的情况：从网络回复中读取响应数据，并发送信号通知完成，传递响应数据、成功状态和模块信息
         QString res = reply->readAll();
         emit self->sig_http_finish(req_id, res, ErrorCodes::SUCCESS, mod);

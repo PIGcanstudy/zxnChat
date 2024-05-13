@@ -38,7 +38,7 @@ private:
 	VarifyGrpcClient() {
 		//这个相当于是一个通道，通过通道与服务器通信
 		//第一个参数为目的地，第二个参数为通信凭证
-		std::shared_ptr<Channel> channel = grpc::CreateChannel("0.0.0.0:50051",
+		std::shared_ptr<Channel> channel = grpc::CreateChannel("127.0.0.1:50051",
 			grpc::InsecureChannelCredentials());
 		stub_ = VarifyService::NewStub(channel);
 	}

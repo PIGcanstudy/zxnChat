@@ -5,6 +5,7 @@
 #include "CServer.h"
 #include <iostream>
 #include "ConfigMgr.h"
+#include "AsioIOServicePool.h"
 int main()
 {
 	try {

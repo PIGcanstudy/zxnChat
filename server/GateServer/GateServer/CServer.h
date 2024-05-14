@@ -10,7 +10,6 @@ public:
 private:
 	tcp::acceptor _acceptor;
 	net::io_context& _ioc;
-	//用来复用，接收对端连接，然后转给其他socket
-	tcp::socket _socket;
+	
 };
 

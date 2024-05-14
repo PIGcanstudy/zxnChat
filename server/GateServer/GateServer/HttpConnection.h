@@ -7,8 +7,12 @@ class HttpConnection: public std::enable_shared_from_this<HttpConnection>
 {
 public:
 	friend class LogicSystem;
-	HttpConnection(tcp::socket socket);
+	HttpConnection(boost::asio::io_context& ioc);
 	void Start();
+
+	tcp::socket& GetSocket() {
+		return _socket;
+	}
 private:
 	//¼ì²â³¬Ê±µÄº¯Êý
 	void CheckDeadline();

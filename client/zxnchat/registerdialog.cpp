@@ -93,6 +93,7 @@ void RegisterDialog::initHttpHandlers()
         int error = jsonObj["error"].toInt();
         if(error != ErrorCodes::SUCCESS){
             showTip(tr("参数错误"), false);
+            qDebug() << "服务端发送错误回包";
             return;
         }
         auto email = jsonObj["email"].toString();

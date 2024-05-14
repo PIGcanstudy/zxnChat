@@ -3,6 +3,11 @@
 #include "message.grpc.pb.h"
 #include "const.h"
 #include "Singleton.h"
+#include <atomic>
+#include <queue>
+#include <mutex>
+#include <condition_variable>
+#include <future>
 
 using grpc::Channel;
 using grpc::Status;
@@ -12,35 +17,45 @@ using message::GetVarifyReq;
 using message::GetVarifyRsp;
 using message::VarifyService;
 
+
+// 池子
+class RPConPool {
+public:
+	//构造池子
+	RPConPool(std::string host, std::string port, std::size_t poolSize = std::thread::hardware_concurrency());
+	//析构池子
+	~RPConPool();
+	// 从池子中取Stub
+	std::unique_ptr<VarifyService::Stub> getConnection();
+	// 线程用完后将stub还给池子
+	void returnConnection(std::unique_ptr<VarifyService::Stub> context);
+
+private:
+	//用来标记池子是否关闭
+	std::atomic_bool _b_stop;
+	//池子里的大小
+	size_t _poolSize;
+	//主机地址
+	std::string _host;
+	//端口
+	std::string _port;
+
+	//队列，用来存储多个Stub，多线程从这取Stub
+	std::queue<std::unique_ptr<VarifyService::Stub>> _connections;
+
+	//用来实现互斥的锁
+	std::mutex _mutex;
+
+	//用来通知的条件变量
+	std::condition_variable _cond;
+};
+
 class VarifyGrpcClient :public Singleton<VarifyGrpcClient> {
 	friend class Singleton<VarifyGrpcClient>;
 public:
-	GetVarifyRsp GetVarifyCode(std::string& email) {
-		//客户端的上下文 和 io_context类似
-		ClientContext context;
-		//接收的回应
-		GetVarifyRsp reply;
-		//发送的请求
-		GetVarifyReq request;
-		//设置email
-		request.set_email(email);
-		//通过stub来调用其他服务器的接口
-		Status status = stub_->GetVarifyCode(&context, request,  &reply);
-		if (status.ok()) {
-			return reply;
-		}
-		else {
-			reply.set_error(ErrorCodes::RPCFailed);
-			return reply;
-		}
-	}
+	GetVarifyRsp GetVarifyCode(std::string& email);
 private:
-	VarifyGrpcClient() {
-		//这个相当于是一个通道，通过通道与服务器通信
-		//第一个参数为目的地，第二个参数为通信凭证
-		std::shared_ptr<Channel> channel = grpc::CreateChannel("127.0.0.1:50051",
-			grpc::InsecureChannelCredentials());
-		stub_ = VarifyService::NewStub(channel);
-	}
-	std::unique_ptr<VarifyService::Stub> stub_;
+	VarifyGrpcClient();
+	
+	std::unique_ptr<RPConPool> _pool;
 };

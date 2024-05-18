@@ -30,7 +30,7 @@ void TestRedisMgr() {
 }
 int main()
 {
-	TestRedisMgr();
+	//TestRedisMgr();
 	try {
 		auto& gcfgMgr = ConfigMgr::GetInstance();
 		std::string gate_port_str = gcfgMgr["GateServer"]["Port"];

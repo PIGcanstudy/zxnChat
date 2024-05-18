@@ -53,7 +53,7 @@ public:
     QSpacerItem *verticalSpacer_2;
     QHBoxLayout *horizontalLayout_6;
     QSpacerItem *horizontalSpacer;
-    QPushButton *confirm_btn;
+    QPushButton *sure_btn;
     QPushButton *cancel_btn;
     QSpacerItem *horizontalSpacer_2;
     QSpacerItem *verticalSpacer_3;
@@ -208,12 +208,12 @@ public:
 
         horizontalLayout_6->addItem(horizontalSpacer);
 
-        confirm_btn = new QPushButton(page);
-        confirm_btn->setObjectName("confirm_btn");
-        confirm_btn->setMinimumSize(QSize(0, 25));
-        confirm_btn->setMaximumSize(QSize(16777215, 25));
+        sure_btn = new QPushButton(page);
+        sure_btn->setObjectName("sure_btn");
+        sure_btn->setMinimumSize(QSize(0, 25));
+        sure_btn->setMaximumSize(QSize(16777215, 25));
 
-        horizontalLayout_6->addWidget(confirm_btn);
+        horizontalLayout_6->addWidget(sure_btn);
 
         cancel_btn = new QPushButton(page);
         cancel_btn->setObjectName("cancel_btn");
@@ -262,7 +262,7 @@ public:
         confirm_label->setText(QCoreApplication::translate("RegisterDialog", "\347\241\256\350\256\244\357\274\232", nullptr));
         varify_label->setText(QCoreApplication::translate("RegisterDialog", "\351\252\214\350\257\201\347\240\201\357\274\232", nullptr));
         get_code->setText(QCoreApplication::translate("RegisterDialog", "\350\216\267\345\217\226", nullptr));
-        confirm_btn->setText(QCoreApplication::translate("RegisterDialog", "\347\241\256\350\256\244", nullptr));
+        sure_btn->setText(QCoreApplication::translate("RegisterDialog", "\347\241\256\350\256\244", nullptr));
         cancel_btn->setText(QCoreApplication::translate("RegisterDialog", "\345\217\226\346\266\210", nullptr));
     } // retranslateUi
 

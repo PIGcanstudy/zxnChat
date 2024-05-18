@@ -15,10 +15,10 @@ try {
 
     const protoDescriptor = grpc.loadPackageDefinition(packageDefinition);
     
-    console.log(protoDescriptor);
+    //console.log(protoDescriptor);
     const message_proto = protoDescriptor.message;
 
-    console.log(message_proto);
+   // console.log(message_proto);
 
     module.exports = message_proto;
 } catch (error) {

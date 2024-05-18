@@ -17,6 +17,7 @@ x64
 
 # 忽略依赖管理和包文件
 /packages/
+node_modules
 
 # 忽略日志和调试文件
 /logs/

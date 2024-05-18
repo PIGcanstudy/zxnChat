@@ -20,10 +20,12 @@ GetVarifyRsp  VarifyGrpcClient::GetVarifyCode(std::string& email) {
 	if (status.ok()) {
 		//还给池子
 		_pool->returnConnection(std::move(stub));
+		std::cout << "grpc调用成功 "<< std::endl;
 		return reply;
 	}
 	else {
 		_pool->returnConnection(std::move(stub));
+		std::cout << "grpc调用失败" << std::endl;
 		reply.set_error(ErrorCodes::RPCFailed);
 		return reply;
 	}

@@ -16,6 +16,10 @@ public:
 	~MysqlDao();
 	// 用于注册用户
 	int RegUser(const std::string& name, const std::string& email, const std::string& pwd);
+	// 检查邮箱是否存在
+	bool CheckEmail(const std::string& name, const std::string& email);
+	// 更新密码
+	bool UpdatePwd(const std::string& name, const std::string& newpwd);
 private:
 	std::unique_ptr<MySqlPool> _pool;
 };

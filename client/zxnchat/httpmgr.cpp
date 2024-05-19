@@ -54,5 +54,9 @@ void Httpmgr::slot_http_finish(ReqId req_id, QString res, ErrorCodes err, Module
         //发送信号通知指定模块http响应已结束
         emit sig_reg_mod_finish(req_id, res, err);
     }
+    if(mod == Modules::RESETMOD){
+        // 发送信号通知重置模块http响应已结束
+        emit sig_reset_mod_finish(req_id, res, err);
+    }
     //...后续的模块操作
 }

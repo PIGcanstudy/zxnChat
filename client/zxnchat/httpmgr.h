@@ -48,6 +48,9 @@ signals:
 
     //注册模块http请求完成发送此信号
     void sig_reg_mod_finish(ReqId id, QString res, ErrorCodes err);
+
+    //重置模块http请求完成发送此信号
+    void sig_reset_mod_finish(ReqId id, QString res, ErrorCodes err);
     //...其他模块的完成时发送的信号
 };
 

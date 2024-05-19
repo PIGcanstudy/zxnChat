@@ -25,6 +25,8 @@ private slots:
 
     void on_return_btn_clicked();
 
+    void on_cancel_btn_clicked();
+
 public slots:
     //接收httpmgr发送过来的注册信号的槽
     void slot_reg_mod_finish(ReqId id, QString res, ErrorCodes err);

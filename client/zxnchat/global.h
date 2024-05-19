@@ -31,6 +31,7 @@ extern std::function<QString(QString)> xorString;
 enum ReqId{
     ID_GET_VARIFY_CODE = 1001, //获取验证码
     ID_REG_USER = 1002, // 用户注册
+    ID_RESET_PWD = 1003, //重置密码
 };
 
 /**
@@ -38,6 +39,8 @@ enum ReqId{
  */
 enum Modules{
     REGISTERMOD = 0, //注册模块
+    RESETMOD = 1, //重置密码模块
+    LOGINMOD = 2, // 登录模块
 };
 
 /**

@@ -20,6 +20,7 @@
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include "clickedlabel.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -41,7 +42,7 @@ public:
     QLineEdit *pw_edit;
     QHBoxLayout *horizontalLayout_3;
     QSpacerItem *horizontalSpacer;
-    QLabel *forget_label;
+    ClickedLabel *forget_label;
     QSpacerItem *verticalSpacer_2;
     QHBoxLayout *horizontalLayout_4;
     QSpacerItem *horizontalSpacer_2;
@@ -133,7 +134,7 @@ public:
 
         horizontalLayout_3->addItem(horizontalSpacer);
 
-        forget_label = new QLabel(LoginDialog);
+        forget_label = new ClickedLabel(LoginDialog);
         forget_label->setObjectName("forget_label");
         forget_label->setMinimumSize(QSize(0, 25));
         forget_label->setMaximumSize(QSize(16777215, 25));

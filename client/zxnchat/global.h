@@ -19,6 +19,13 @@
 extern std::function<void(QWidget*)> repolish;
 
 /**
+ * @brief xorString 用来加密密码的
+ * 这是为了让密码被泄露了也不会透露用户隐私用的
+ */
+
+extern std::function<QString(QString)> xorString;
+
+/**
  * @brief The ReqId enum 请求id
  */
 enum ReqId{
@@ -41,6 +48,27 @@ enum ErrorCodes{
     SUCCESS = 0, //成功
     ERR_JSON = 1, //json解析失败
     ERR_NETWORK = 2,//网络错误
+};
+
+/**
+ * @brief The TipErr enum 错误输出框输出内容的key值
+ */
+enum TipErr{
+    TIP_SUCCESS = 0,
+    TIP_EMAIL_ERR = 1,
+    TIP_PWD_ERR = 2,
+    TIP_CONFIRM_ERR = 3,
+    TIP_PWD_CONFIRM = 4,
+    TIP_VARIFY_ERR = 5,
+    TIP_USER_ERR = 6
+};
+
+/**
+ * @brief The ClickLbState enum 对应可见与不可见的状态
+ */
+enum ClickLbState{
+    Normal = 0,
+    Selected = 1
 };
 
 extern QString gate_url_prefix;

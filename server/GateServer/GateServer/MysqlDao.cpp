@@ -21,8 +21,16 @@ MysqlDao::~MysqlDao()
 int MysqlDao::RegUser(const std::string& name, const std::string& email, const std::string& pwd)
 {
 	auto con = _pool->getConnection();
+
+	if (con == nullptr) return false;
+
+	// 用来回收连接到池子中
+	Defer defer([this, &con]() {
+		_pool->returnConnection(std::move(con));
+		});
+
 	try {
-		if (con == nullptr) return false;
+		
 		// 准备调用存储过程
 		std::unique_ptr<sql::PreparedStatement> stmt(con->_con->prepareStatement("CALL reg_user(?,?,?,@result)"));
 		// 设置输入参数
@@ -44,15 +52,15 @@ int MysqlDao::RegUser(const std::string& name, const std::string& email, const s
 		if (res->next()) {
 			int result = res->getInt("result");
 			std::cout << "Result: " << result << std::endl;
-			_pool->returnConnection(std::move(con));
+			//_pool->returnConnection(std::move(con));
 			return result;
 		}
 
-		_pool->returnConnection(std::move(con));
+		//_pool->returnConnection(std::move(con));
 		return -1;
 	}
 	catch (sql::SQLException& e) {
-		_pool->returnConnection(std::move(con));
+		//_pool->returnConnection(std::move(con));
 		std::cerr << "SQLException: " << e.what();
 		std::cerr << " (MySQL error code: " << e.getErrorCode();
 		std::cerr << ", SQLState: " << e.getSQLState() << " )" << std::endl;
@@ -64,11 +72,18 @@ int MysqlDao::RegUser(const std::string& name, const std::string& email, const s
 bool MysqlDao::CheckEmail(const std::string& name, const std::string& email)
 {
 	auto con = _pool->getConnection();
+
+	if (con == nullptr) {
+		_pool->returnConnection(std::move(con));
+		return false;
+	}
+
+	// 用来回收连接到池子中
+	Defer defer([this, &con]() {
+		_pool->returnConnection(std::move(con));
+		});
+
 	try {
-		if (con == nullptr) {
-			_pool->returnConnection(std::move(con));
-			return false;
-		}
 
 		// 准备查询语句
 		std::unique_ptr<sql::PreparedStatement> pstmt(con->_con->prepareStatement("SELECT email FROM user WHERE name = ?"));
@@ -83,15 +98,15 @@ bool MysqlDao::CheckEmail(const std::string& name, const std::string& email)
 		while (res->next()) {
 			std::cout << "Check Email: " << res->getString("email") << std::endl;
 			if (email != res->getString("email")) {
-				_pool->returnConnection(std::move(con));
+				//_pool->returnConnection(std::move(con));
 				return false;
 			}
-			_pool->returnConnection(std::move(con));
+			//_pool->returnConnection(std::move(con));
 			return true;
 		}
 	}
 	catch (sql::SQLException& e) {
-		_pool->returnConnection(std::move(con));
+		//_pool->returnConnection(std::move(con));
 		std::cerr << "SQLException: " << e.what();
 		std::cerr << " (MySQL error code: " << e.getErrorCode();
 		std::cerr << ", SQLState: " << e.getSQLState() << " )" << std::endl;
@@ -102,11 +117,18 @@ bool MysqlDao::CheckEmail(const std::string& name, const std::string& email)
 bool MysqlDao::UpdatePwd(const std::string& name, const std::string& newpwd)
 {
 	auto con = _pool->getConnection();
-	try {
-		if (con == nullptr) {
+
+	if (con == nullptr) {
 			_pool->returnConnection(std::move(con));
 			return false;
-		}
+	}
+
+	// 用来回收连接到池子中
+	Defer defer([this, &con]() {
+		_pool->returnConnection(std::move(con));
+		});
+
+	try {
 
 		// 准备查询语句
 		std::unique_ptr<sql::PreparedStatement> pstmt(con->_con->prepareStatement("UPDATE user SET pwd = ? WHERE name = ?"));
@@ -120,11 +142,63 @@ bool MysqlDao::UpdatePwd(const std::string& name, const std::string& newpwd)
 
 		std::cout << "Updated rows: " << updateCount << std::endl;
 
-		_pool->returnConnection(std::move(con));
+		//pool->returnConnection(std::move(con));
 		return true;
 	}
 	catch (sql::SQLException& e) {
+		//_pool->returnConnection(std::move(con));
+		std::cerr << "SQLException: " << e.what();
+		std::cerr << " (MySQL error code: " << e.getErrorCode();
+		std::cerr << ", SQLState: " << e.getSQLState() << " )" << std::endl;
+		return false;
+	}
+}
+
+bool MysqlDao::CheckPwd(const std::string& email, const std::string& pwd, UserInfo& userInfo)
+{
+	auto con = _pool->getConnection();
+	if (con == nullptr) {
+		return false;
+	}
+
+	Defer defer([this, &con]() {
 		_pool->returnConnection(std::move(con));
+		});
+
+	try {
+
+		// 准备SQL语句
+		std::unique_ptr<sql::PreparedStatement> pstmt(con->_con->prepareStatement("SELECT * FROM user WHERE email = ?"));
+		pstmt->setString(1, email); // 将username替换为你要查询的用户名
+
+		std::cout << "email is" << email << std::endl;
+
+		// 执行查询
+		std::unique_ptr<sql::ResultSet> res(pstmt->executeQuery());
+
+		std::string origin_pwd = "";
+
+		// 遍历结果集
+		while (res->next()) {
+			origin_pwd = res->getString("pwd");
+			// 输出查询到的密码
+			std::cout << "Password: " << origin_pwd << std::endl;
+			break;
+		}
+
+		std::cout << origin_pwd << std::endl;
+
+		if (pwd != origin_pwd) {
+			return false;
+		}
+
+		userInfo.name = res->getString("name");
+		userInfo.email = email;
+		userInfo.uid = res->getInt("uid");
+		userInfo.pwd = origin_pwd;
+		return true;
+	}
+	catch (sql::SQLException& e) {
 		std::cerr << "SQLException: " << e.what();
 		std::cerr << " (MySQL error code: " << e.getErrorCode();
 		std::cerr << ", SQLState: " << e.getSQLState() << " )" << std::endl;

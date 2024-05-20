@@ -15,6 +15,8 @@ public:
 	bool CheckEmail(const std::string& name, const std::string& email);
 	// ¸üĞÂÃÜÂë
 	bool UpdatePwd(const std::string& name, const std::string& pwd);
+	// ¼ì²éÃÜÂë
+	bool CheckPwd(const std::string& email, const std::string& pwd, UserInfo& userinfo);
 private:
 	MysqlMgr();
 	MysqlDao  _dao;

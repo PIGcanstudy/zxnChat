@@ -149,11 +149,43 @@ compiler_rcc_clean:
 debug/qrc_rc.cpp: rc.qrc \
 		../../../Qt/6.6.3/mingw_64/bin/rcc.exe \
 		style/stylesheet.qss \
+		res/head_6.jpg \
+		res/contact_list_press.png \
+		res/tipclose.png \
+		res/head_4.jpg \
+		res/head_1.jpg \
+		res/filedir.png \
+		res/chat_icon_press.png \
+		res/right_tip.png \
+		res/search.png \
+		res/head_3.jpg \
+		res/ice.png \
+		res/smile_hover.png \
+		res/head_5.jpg \
+		res/chat_icon.png \
+		res/close_transparent.png \
+		res/addtip.png \
+		res/chat_icon_hover.png \
+		res/filedir_hover.png \
 		res/unvisible.png \
 		res/zgn.png \
+		res/add_friend_normal.png \
+		res/close_search.png \
+		res/contact_list.png \
+		res/contact_list_hover.png \
+		res/loading.gif \
 		res/unvisible_hover.png \
+		res/head_7.png \
+		res/smile.png \
+		res/arowdown.png \
 		res/visible.png \
-		res/visible_hover.png
+		res/chat_icon_select_hover.png \
+		res/visible_hover.png \
+		res/chat_icon_select_press.png \
+		res/smile_press.png \
+		res/add_friend_hover.png \
+		res/filedir_press.png \
+		res/head_2.jpg
 	D:\Qt\6.6.3\mingw_64\bin\rcc.exe -name rc --no-zstd rc.qrc -o debug\qrc_rc.cpp
 
 compiler_moc_predefs_make_all: debug/moc_predefs.h
@@ -596,8 +628,9 @@ debug/moc_httpmgr.cpp: httpmgr.h \
 	D:\Qt\6.6.3\mingw_64\bin\moc.exe $(DEFINES) --include D:/zxnchat/client/zxnchat/debug/moc_predefs.h -ID:/Qt/6.6.3/mingw_64/mkspecs/win32-g++ -ID:/zxnchat/client/zxnchat -ID:/Qt/6.6.3/mingw_64/include -ID:/Qt/6.6.3/mingw_64/include/QtWidgets -ID:/Qt/6.6.3/mingw_64/include/QtGui -ID:/Qt/6.6.3/mingw_64/include/QtNetwork -ID:/Qt/6.6.3/mingw_64/include/QtCore -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -ID:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include httpmgr.h -o debug\moc_httpmgr.cpp
 
 debug/moc_logindialog.cpp: logindialog.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QDialog \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qdialog.h \
+		global.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QWidget \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qwidget.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
 		../../../Qt/6.6.3/mingw_64/include/QtGui/qtguiglobal.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qglobal.h \
@@ -647,7 +680,6 @@ debug/moc_logindialog.cpp: logindialog.h \
 		../../../Qt/6.6.3/mingw_64/include/QtGui/qtguiexports.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qtwidgets-config.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qtwidgetsexports.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qwidget.h \
 		../../../Qt/6.6.3/mingw_64/include/QtGui/qwindowdefs.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qobjectdefs.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qnamespace.h \
@@ -759,6 +791,50 @@ debug/moc_logindialog.cpp: logindialog.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QSizeF \
 		../../../Qt/6.6.3/mingw_64/include/QtGui/QTransform \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qnativeinterface.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QStyle \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qstyle.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QRegularExpression \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qregularexpression.h \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/QNetworkAccessManager \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qnetworkaccessmanager.h \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qtnetworkglobal.h \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qtnetwork-config.h \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qtnetworkexports.h \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qnetworkrequest.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QSharedDataPointer \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QString \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QUrl \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QVariant \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/QSslConfiguration \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qsslconfiguration.h \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qsslsocket.h \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qtcpsocket.h \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qabstractsocket.h \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qhostaddress.h \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qsslerror.h \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qsslcertificate.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcryptographichash.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qdatetime.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcalendar.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qlocale.h \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qssl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QFlags \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QMetaType \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QJsonObject \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qjsonobject.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qjsonvalue.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcborvalue.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcborcommon.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/quuid.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qendian.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QJsonDocument \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qjsondocument.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QSettings \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qsettings.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QDialog \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qdialog.h \
 		debug/moc_predefs.h \
 		../../../Qt/6.6.3/mingw_64/bin/moc.exe
 	D:\Qt\6.6.3\mingw_64\bin\moc.exe $(DEFINES) --include D:/zxnchat/client/zxnchat/debug/moc_predefs.h -ID:/Qt/6.6.3/mingw_64/mkspecs/win32-g++ -ID:/zxnchat/client/zxnchat -ID:/Qt/6.6.3/mingw_64/include -ID:/Qt/6.6.3/mingw_64/include/QtWidgets -ID:/Qt/6.6.3/mingw_64/include/QtGui -ID:/Qt/6.6.3/mingw_64/include/QtNetwork -ID:/Qt/6.6.3/mingw_64/include/QtCore -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -ID:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include logindialog.h -o debug\moc_logindialog.cpp
@@ -929,9 +1005,6 @@ debug/moc_mainwindow.cpp: mainwindow.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qnativeinterface.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qtabwidget.h \
 		logindialog.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QDialog \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qdialog.h \
-		registerdialog.h \
 		global.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QWidget \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QStyle \
@@ -976,6 +1049,9 @@ debug/moc_mainwindow.cpp: mainwindow.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qjsondocument.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QSettings \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qsettings.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QDialog \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qdialog.h \
+		registerdialog.h \
 		resetdialog.h \
 		debug/moc_predefs.h \
 		../../../Qt/6.6.3/mingw_64/bin/moc.exe
@@ -2833,8 +2909,9 @@ debug/httpmgr.o: httpmgr.cpp httpmgr.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\httpmgr.o httpmgr.cpp
 
 debug/logindialog.o: logindialog.cpp logindialog.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QDialog \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qdialog.h \
+		global.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QWidget \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qwidget.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
 		../../../Qt/6.6.3/mingw_64/include/QtGui/qtguiglobal.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qglobal.h \
@@ -2884,7 +2961,6 @@ debug/logindialog.o: logindialog.cpp logindialog.h \
 		../../../Qt/6.6.3/mingw_64/include/QtGui/qtguiexports.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qtwidgets-config.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qtwidgetsexports.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qwidget.h \
 		../../../Qt/6.6.3/mingw_64/include/QtGui/qwindowdefs.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qobjectdefs.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qnamespace.h \
@@ -2996,55 +3072,6 @@ debug/logindialog.o: logindialog.cpp logindialog.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QSizeF \
 		../../../Qt/6.6.3/mingw_64/include/QtGui/QTransform \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qnativeinterface.h \
-		ui_logindialog.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/QVariant \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QApplication \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qapplication.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qeventloop.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qfutureinterface.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qmutex.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qdeadlinetimer.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qelapsedtimer.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qtsan_impl.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qresultstore.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture_impl.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qthreadpool.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qthread.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qrunnable.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qinputmethod.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qlocale.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QGridLayout \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qgridlayout.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayout.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qboxlayout.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QHBoxLayout \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLabel \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlabel.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qframe.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qpicture.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextdocument.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLineEdit \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlineedit.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextcursor.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextformat.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qpen.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextoption.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QPushButton \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qpushbutton.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QSpacerItem \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QVBoxLayout \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QWidget \
-		clickedlabel.h \
-		global.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QStyle \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qstyle.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QRegularExpression \
@@ -3058,6 +3085,7 @@ debug/logindialog.o: logindialog.cpp logindialog.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QSharedDataPointer \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QString \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QUrl \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QVariant \
 		../../../Qt/6.6.3/mingw_64/include/QtNetwork/QSslConfiguration \
 		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qsslconfiguration.h \
 		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qsslsocket.h \
@@ -3069,6 +3097,7 @@ debug/logindialog.o: logindialog.cpp logindialog.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qcryptographichash.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qdatetime.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qcalendar.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qlocale.h \
 		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qssl.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QFlags \
 		../../../Qt/6.6.3/mingw_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
@@ -3084,7 +3113,23 @@ debug/logindialog.o: logindialog.cpp logindialog.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QJsonDocument \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qjsondocument.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QSettings \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qsettings.h
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qsettings.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QDialog \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qdialog.h \
+		ui_logindialog.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QDebug \
+		httpmgr.h \
+		singleton.h \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/QNetworkReply \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qnetworkreply.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QIODevice \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/QNetworkRequest \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/QPainter \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qpainter.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextoption.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qpen.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/QPainterPath \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qpainterpath.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\logindialog.o logindialog.cpp
 
 debug/main.o: main.cpp mainwindow.h \
@@ -3253,9 +3298,6 @@ debug/main.o: main.cpp mainwindow.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qnativeinterface.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qtabwidget.h \
 		logindialog.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QDialog \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qdialog.h \
-		registerdialog.h \
 		global.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QWidget \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QStyle \
@@ -3300,6 +3342,9 @@ debug/main.o: main.cpp mainwindow.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qjsondocument.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QSettings \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qsettings.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QDialog \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qdialog.h \
+		registerdialog.h \
 		resetdialog.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QFile \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qfile.h \
@@ -3497,9 +3542,6 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qnativeinterface.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qtabwidget.h \
 		logindialog.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QDialog \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qdialog.h \
-		registerdialog.h \
 		global.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QWidget \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QStyle \
@@ -3544,34 +3586,11 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qjsondocument.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QSettings \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qsettings.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QDialog \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qdialog.h \
+		registerdialog.h \
 		resetdialog.h \
-		ui_mainwindow.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QApplication \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qapplication.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qeventloop.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qfutureinterface.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qmutex.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qdeadlinetimer.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qelapsedtimer.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qtsan_impl.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qresultstore.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture_impl.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qthreadpool.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qthread.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qrunnable.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qinputmethod.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QMenuBar \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qmenubar.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qmenu.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QStatusBar \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qstatusbar.h
+		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o mainwindow.cpp
 
 debug/registerdialog.o: registerdialog.cpp registerdialog.h \
@@ -3783,55 +3802,6 @@ debug/registerdialog.o: registerdialog.cpp registerdialog.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QSettings \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qsettings.h \
 		ui_registerdialog.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QApplication \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qapplication.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qeventloop.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qfutureinterface.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qmutex.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qdeadlinetimer.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qelapsedtimer.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qtsan_impl.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qresultstore.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture_impl.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qthreadpool.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qthread.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qrunnable.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qinputmethod.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QHBoxLayout \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qboxlayout.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayout.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qgridlayout.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLabel \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlabel.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qframe.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qpicture.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextdocument.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLineEdit \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlineedit.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextcursor.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextformat.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qpen.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextoption.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QPushButton \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qpushbutton.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QSpacerItem \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QStackedWidget \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qstackedwidget.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QVBoxLayout \
-		clickedlabel.h \
-		timerbtn.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/QTimer \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qtimer.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qbasictimer.h \
 		httpmgr.h \
 		singleton.h \
 		../../../Qt/6.6.3/mingw_64/include/QtNetwork/QNetworkReply \

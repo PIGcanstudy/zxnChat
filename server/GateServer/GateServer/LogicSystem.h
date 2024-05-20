@@ -27,6 +27,7 @@ public:
 
 	//用来注册Post请求
 	void RegPost(std::string url, HttpHandler handler);
+
 private:
 	LogicSystem(); 
 	//处理Post请求的集合

@@ -38,18 +38,18 @@ StatusServiceImpl::StatusServiceImpl()
 	auto& cfg = ConfigMgr::GetInstance();
 	ChatServer server;
 
-	// 初始化第一个聊天服务器
-	server.port = cfg["ChatServer1"]["Port"];
-	server.host = cfg["ChatServer1"]["Host"];
-	server.con_count = 0;
-	server.name = cfg["ChatServer1"]["Name"];
-	_servers[server.name] = server;
-
 	// 初始化第二个聊天服务器
 	server.port = cfg["ChatServer2"]["Port"];
 	server.host = cfg["ChatServer2"]["Host"];
 	server.name = cfg["ChatServer2"]["Name"];
 	server.con_count = 0;
+	_servers[server.name] = server;
+
+	// 初始化第一个聊天服务器
+	server.port = cfg["ChatServer1"]["Port"];
+	server.host = cfg["ChatServer1"]["Host"];
+	server.con_count = 0;
+	server.name = cfg["ChatServer1"]["Name"];
 	_servers[server.name] = server;
 }
 

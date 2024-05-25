@@ -28,6 +28,8 @@ LoginDialog::LoginDialog(QWidget *parent)
     connect(this, &LoginDialog::sig_connect_tcp, TcpMgr::GetInstance().get(), &TcpMgr::slot_tcp_connect);
     //连接tcp管理者发出的连接成功信号
     connect(TcpMgr::GetInstance().get(), &TcpMgr::sig_con_success, this, &LoginDialog::slot_tcp_con_finish);
+    //连接tcp管理者发出的登录失败信号
+    connect(TcpMgr::GetInstance().get(), &TcpMgr::sig_login_failed, this, &LoginDialog::slot_login_failed);
 }
 
 LoginDialog::~LoginDialog()
@@ -253,5 +255,12 @@ void LoginDialog::slot_tcp_con_finish(bool bsuccess)
         showTip(tr("网络异常"),false);
         enableBtn(true);
     }
+}
+
+void LoginDialog::slot_login_failed(int err)
+{
+    QString result = QString("登录失败, err is %1").arg(err);
+    showTip(result,false);
+    enableBtn(true);
 }
 

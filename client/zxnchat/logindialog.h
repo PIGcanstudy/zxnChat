@@ -45,6 +45,8 @@ private slots:
     void slot_login_mod_finish(ReqId id, QString res, ErrorCodes err);
     // 响应_tcp_connect信号的槽函数
     void slot_tcp_con_finish(bool bsuccess);
+    // 响应登录失败的信号的槽函数
+    void slot_login_failed(int);
 };
 
 #endif // LOGINDIALOG_H

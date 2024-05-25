@@ -1,6 +1,7 @@
 #include "tcpmgr.h"
 #include <QByteArray>
 #include <QAbstractSocket>
+#include "usermgr.h"
 TcpMgr::~TcpMgr()
 {
 
@@ -116,10 +117,10 @@ void TcpMgr::initHandler()
             return;
         }
 
-        // UserMgr::GetInstance()->SetUid(jsonObj["uid"].toInt());
-        // UserMgr::GetInstance()->SetName(jsonObj["name"].toString());
-        // UserMgr::GetInstance()->SetToken(jsonObj["token"].toString());
-        emit sig_swich_chatdlg();
+        UserMgr::GetInstance()->SetUid(jsonObj["uid"].toInt());
+        UserMgr::GetInstance()->SetName(jsonObj["name"].toString());
+        UserMgr::GetInstance()->SetToken(jsonObj["token"].toString());
+        emit sig_switch_chatdlg();
     });
 }
 

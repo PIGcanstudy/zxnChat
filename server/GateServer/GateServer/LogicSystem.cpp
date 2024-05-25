@@ -280,7 +280,8 @@ LogicSystem::LogicSystem()
         auto email = src_root["email"].asString();
         auto pwd = src_root["passwd"].asString();
 
-        std::cout << pwd << "  nihao " << email << std::endl;
+        std::cout << pwd << "  " << email << std::endl;
+        
         UserInfo userInfo;
 
         //查询数据库判断用户名和密码是否匹配

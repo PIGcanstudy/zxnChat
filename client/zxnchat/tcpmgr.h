@@ -38,7 +38,7 @@ signals:
     // 可以发送数据的信号
     void sig_send_data(ReqId reqId, QString data);
     // 转变到聊天界面的槽函数
-    void sig_swich_chatdlg();
+    void sig_switch_chatdlg();
     // 登录失败的槽函数
     void sig_login_failed(int);
 

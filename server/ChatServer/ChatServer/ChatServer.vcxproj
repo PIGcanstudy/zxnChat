@@ -155,6 +155,7 @@ xcopy $(ProjectDir)*.dll   $(SolutionDir)$(Platform)\$(Configuration)\   /y</Com
     <ClCompile Include="RedisConPool.cpp" />
     <ClCompile Include="RedisMgr.cpp" />
     <ClCompile Include="StatusGrpcClient.cpp" />
+    <ClCompile Include="ThreadPool.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AsioIOServicePool.h" />
@@ -174,6 +175,7 @@ xcopy $(ProjectDir)*.dll   $(SolutionDir)$(Platform)\$(Configuration)\   /y</Com
     <ClInclude Include="RedisMgr.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="StatusGrpcClient.h" />
+    <ClInclude Include="ThreadPool.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="config.ini" />

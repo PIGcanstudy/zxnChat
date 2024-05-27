@@ -2,18 +2,20 @@
 #include "StatusGrpcClient.h"
 #include "MysqlMgr.h"
 #include "const.h"
+#include "ThreadPool.h"
+
 
 using namespace std;
 
 LogicSystem::LogicSystem() :_b_stop(false) {
 	RegisterCallBacks();
-	_worker_thread = std::thread(&LogicSystem::DealMsg, this);
+	//_worker_thread = std::thread(&LogicSystem::DealMsg, this);
 }
 
 LogicSystem::~LogicSystem() {
 	_b_stop = true;
-	_consume.notify_one();
-	_worker_thread.join();
+	_consume.notify_all();
+	//_worker_thread.join();
 }
 
 void LogicSystem::PostMsgToQue(shared_ptr < LogicNode> msg) {
@@ -39,31 +41,37 @@ void LogicSystem::DealMsg() {
 		if (_b_stop) {
 			while (!_msg_que.empty()) {
 				auto msg_node = _msg_que.front();
-				cout << "recv_msg id  is " << msg_node->_recvnode->_msg_id << endl;
-				auto call_back_iter = _fun_callbacks.find(msg_node->_recvnode->_msg_id);
-				if (call_back_iter == _fun_callbacks.end()) {
-					_msg_que.pop();
-					continue;
-				}
-				call_back_iter->second(msg_node->_session, msg_node->_recvnode->_msg_id,
-					std::string(msg_node->_recvnode->_data, msg_node->_recvnode->_cur_len));
 				_msg_que.pop();
+				cout << "recv_msg id  is " << msg_node->_recvnode->_msg_id << endl;
+				ThreadPool::GetInstance()->commit([this, msg_node]() {
+					auto call_back_iter = _fun_callbacks.find(msg_node->_recvnode->_msg_id);
+					if (call_back_iter != _fun_callbacks.end()) {
+						call_back_iter->second(msg_node->_session, msg_node->_recvnode->_msg_id,
+							std::string(msg_node->_recvnode->_data, msg_node->_recvnode->_cur_len));
+					}
+					else {
+						std::cout << "msg id [" << msg_node->_recvnode->_msg_id << "] handler not found" << std::endl;
+					}
+					});
 			}
 			break;
 		}
 
 		//如果没有停服，且说明队列中有数据
 		auto msg_node = _msg_que.front();
-		cout << "recv_msg id  is " << msg_node->_recvnode->_msg_id << endl;
-		auto call_back_iter = _fun_callbacks.find(msg_node->_recvnode->_msg_id);
-		if (call_back_iter == _fun_callbacks.end()) {
-			_msg_que.pop();
-			std::cout << "msg id [" << msg_node->_recvnode->_msg_id << "] handler not found" << std::endl;
-			continue;
-		}
-		call_back_iter->second(msg_node->_session, msg_node->_recvnode->_msg_id,
-			std::string(msg_node->_recvnode->_data, msg_node->_recvnode->_cur_len));
 		_msg_que.pop();
+		cout << "recv_msg id  is " << msg_node->_recvnode->_msg_id << endl;
+		ThreadPool::GetInstance()->commit([this, msg_node]() {
+			auto call_back_iter = _fun_callbacks.find(msg_node->_recvnode->_msg_id);
+			if (call_back_iter != _fun_callbacks.end()) {
+				call_back_iter->second(msg_node->_session, msg_node->_recvnode->_msg_id,
+					std::string(msg_node->_recvnode->_data, msg_node->_recvnode->_cur_len));
+			}
+			else {
+				std::cout << "msg id [" << msg_node->_recvnode->_msg_id << "] handler not found" << std::endl;
+			}
+			});
+		
 	}
 }
 

@@ -30,7 +30,7 @@ private:
 	// 登录逻辑的处理
 	void LoginHandler(shared_ptr<CSession>, const short& msg_id, const string& msg_data);
 	//还需要工作线程来消费逻辑消息
-	std::thread _worker_thread;
+	//std::thread _worker_thread;
 	//用来存储逻辑节点
 	std::queue<shared_ptr<LogicNode>> _msg_que;
 	std::mutex _mutex;

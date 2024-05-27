@@ -190,48 +190,48 @@ void HttpConnection::HandleReq()
 		PreParseGetParam();
 		//获取路由并且传给逻辑系统的处理get请求的函数
 		bool success = LogicSystem::GetInstance()->HandleGet(_get_url, shared_from_this());
-		//如果失败
-		if (!success) {
-			//设置结果
-			_response.result(http::status::not_found);
-			//设置发送的类型,
-			// "text/plain" 是一种 MIME 类型（Multipurpose Internet Mail Extensions）
-			// 用于标识纯文本数据的内容类型
-			_response.set(http::field::content_type, "text/plain");
-			//设置body内容
-			beast::ostream(_response.body()) << "url not found\r\n";
-			WriteResponse();
-			return;
-		}
+		////如果失败
+		//if (!success) {
+		//	//设置结果
+		//	_response.result(http::status::not_found);
+		//	//设置发送的类型,
+		//	// "text/plain" 是一种 MIME 类型（Multipurpose Internet Mail Extensions）
+		//	// 用于标识纯文本数据的内容类型
+		//	_response.set(http::field::content_type, "text/plain");
+		//	//设置body内容
+		//	beast::ostream(_response.body()) << "url not found\r\n";
+		//	WriteResponse();
+		//	return;
+		//}
 
-		_response.result(http::status::ok);
-		//设置是哪个服务发过去的
-		_response.set(http::field::server, "GareServer");
-		WriteResponse();
+		//_response.result(http::status::ok);
+		////设置是哪个服务发过去的
+		//_response.set(http::field::server, "GateServer");
+		//WriteResponse();
 		break;
 	}
 	case http::verb::post:
 	{
-		//获取路由并且传给逻辑系统的处理get请求的函数
+		//获取路由并且传给逻辑系统的处理post请求的函数
 		bool success = LogicSystem::GetInstance()->HandlePost(_request.target(), shared_from_this());
-		//如果失败
-		if (!success) {
-			//设置结果
-			_response.result(http::status::not_found);
-			//设置发送的类型,
-			// "text/plain" 是一种 MIME 类型（Multipurpose Internet Mail Extensions）
-			// 用于标识纯文本数据的内容类型
-			_response.set(http::field::content_type, "text/plain");
-			//设置body内容
-			beast::ostream(_response.body()) << "url not found\r\n";
-			WriteResponse();
-			return;
-		}
+		////如果失败
+		//if (!success) {
+		//	//设置结果
+		//	_response.result(http::status::not_found);
+		//	//设置发送的类型,
+		//	// "text/plain" 是一种 MIME 类型（Multipurpose Internet Mail Extensions）
+		//	// 用于标识纯文本数据的内容类型
+		//	_response.set(http::field::content_type, "text/plain");
+		//	//设置body内容
+		//	beast::ostream(_response.body()) << "url not found\r\n";
+		//	WriteResponse();
+		//	return;
+		//}
 
-		_response.result(http::status::ok);
-		//设置是哪个服务发过去的
-		_response.set(http::field::server, "GareServer");
-		WriteResponse();
+		//_response.result(http::status::ok);
+		////设置是哪个服务发过去的
+		//_response.set(http::field::server, "GateServer");
+		//WriteResponse();
 		break;
 	}
 	default:

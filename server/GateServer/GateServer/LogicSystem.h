@@ -1,5 +1,6 @@
 #pragma once
 #include "Singleton.h"
+#include "ThreadPool.h"
 #include <functional>
 #include <map>
 

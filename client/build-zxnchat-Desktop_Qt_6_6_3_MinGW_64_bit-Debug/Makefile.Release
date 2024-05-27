@@ -3551,50 +3551,6 @@ release/logindialog.o: ../zxnchat/logindialog.cpp ../zxnchat/logindialog.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QDialog \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qdialog.h \
 		ui_logindialog.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QApplication \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qapplication.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qeventloop.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qfutureinterface.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qmutex.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qdeadlinetimer.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qelapsedtimer.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qtsan_impl.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qresultstore.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture_impl.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qthreadpool.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qthread.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qrunnable.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qinputmethod.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QGridLayout \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qgridlayout.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayout.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qboxlayout.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QHBoxLayout \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLabel \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlabel.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qframe.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qpicture.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextdocument.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLineEdit \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlineedit.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextcursor.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextformat.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qpen.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextoption.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QPushButton \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qpushbutton.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QSpacerItem \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QVBoxLayout \
-		../zxnchat/clickedlabel.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QDebug \
 		../zxnchat/httpmgr.h \
 		../zxnchat/singleton.h \
@@ -3604,6 +3560,8 @@ release/logindialog.o: ../zxnchat/logindialog.cpp ../zxnchat/logindialog.h \
 		../../../Qt/6.6.3/mingw_64/include/QtNetwork/QNetworkRequest \
 		../../../Qt/6.6.3/mingw_64/include/QtGui/QPainter \
 		../../../Qt/6.6.3/mingw_64/include/QtGui/qpainter.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextoption.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qpen.h \
 		../../../Qt/6.6.3/mingw_64/include/QtGui/QPainterPath \
 		../../../Qt/6.6.3/mingw_64/include/QtGui/qpainterpath.h \
 		../zxnchat/tcpmgr.h \
@@ -4069,33 +4027,7 @@ release/mainwindow.o: ../zxnchat/mainwindow.cpp ../zxnchat/mainwindow.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qdialog.h \
 		../zxnchat/registerdialog.h \
 		../zxnchat/resetdialog.h \
-		ui_mainwindow.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QApplication \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qapplication.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qeventloop.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qfutureinterface.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qmutex.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qdeadlinetimer.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qelapsedtimer.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qtsan_impl.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qresultstore.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture_impl.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qthreadpool.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qthread.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qrunnable.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qinputmethod.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QMenuBar \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qmenubar.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qmenu.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QStatusBar \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qstatusbar.h
+		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\zxnchat\mainwindow.cpp
 
 release/registerdialog.o: ../zxnchat/registerdialog.cpp ../zxnchat/registerdialog.h \
@@ -4307,55 +4239,6 @@ release/registerdialog.o: ../zxnchat/registerdialog.cpp ../zxnchat/registerdialo
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QSettings \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qsettings.h \
 		ui_registerdialog.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QApplication \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qapplication.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qeventloop.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qfutureinterface.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qmutex.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qdeadlinetimer.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qelapsedtimer.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qtsan_impl.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qresultstore.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture_impl.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qthreadpool.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qthread.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qrunnable.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qinputmethod.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QHBoxLayout \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qboxlayout.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayout.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qgridlayout.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLabel \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlabel.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qframe.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qpicture.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextdocument.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLineEdit \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlineedit.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextcursor.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextformat.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qpen.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextoption.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QPushButton \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qpushbutton.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QSpacerItem \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QStackedWidget \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qstackedwidget.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QVBoxLayout \
-		../zxnchat/clickedlabel.h \
-		../zxnchat/timerbtn.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/QTimer \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qtimer.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qbasictimer.h \
 		../zxnchat/httpmgr.h \
 		../zxnchat/singleton.h \
 		../../../Qt/6.6.3/mingw_64/include/QtNetwork/QNetworkReply \
@@ -4573,52 +4456,6 @@ release/resetdialog.o: ../zxnchat/resetdialog.cpp ../zxnchat/resetdialog.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QSettings \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qsettings.h \
 		ui_resetdialog.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QApplication \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qapplication.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qeventloop.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qfutureinterface.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qmutex.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qdeadlinetimer.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qelapsedtimer.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qtsan_impl.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qresultstore.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture_impl.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qthreadpool.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qthread.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qrunnable.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qinputmethod.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QHBoxLayout \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qboxlayout.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayout.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qgridlayout.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLabel \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlabel.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qframe.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qpicture.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextdocument.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLineEdit \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlineedit.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextcursor.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextformat.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qpen.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextoption.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QPushButton \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qpushbutton.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QSpacerItem \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QVBoxLayout \
-		../zxnchat/timerbtn.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/QTimer \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qtimer.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qbasictimer.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QDebug \
 		../zxnchat/httpmgr.h \
 		../zxnchat/singleton.h \
@@ -4837,7 +4674,9 @@ release/tcpmgr.o: ../zxnchat/tcpmgr.cpp ../zxnchat/tcpmgr.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QSettings \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qsettings.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QByteArray \
-		../../../Qt/6.6.3/mingw_64/include/QtNetwork/QAbstractSocket
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/QAbstractSocket \
+		../zxnchat/usermgr.h \
+		../zxnchat/singleton.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\tcpmgr.o ..\zxnchat\tcpmgr.cpp
 
 release/timerbtn.o: ../zxnchat/timerbtn.cpp ../zxnchat/timerbtn.h \

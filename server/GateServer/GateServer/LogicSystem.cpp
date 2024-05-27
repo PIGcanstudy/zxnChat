@@ -10,13 +10,33 @@ LogicSystem::~LogicSystem()
 
 bool LogicSystem::HandleGet(std::string path, std::shared_ptr<HttpConnection> connection)
 {
+    bool flag = true;
 	//如果在存放get请求的map里没找到对应路径 则直接返回false
 	if (_get_handlers.find(path) == _get_handlers.end()) {
+        //如果失败
+        //设置结果
+        connection->_response.result(http::status::not_found);
+        //设置发送的类型,
+        // "text/plain" 是一种 MIME 类型（Multipurpose Internet Mail Extensions）
+        // 用于标识纯文本数据的内容类型
+        connection->_response.set(http::field::content_type, "text/plain");
+        //设置body内容
+        beast::ostream(connection->_response.body()) << "url not found\r\n";
+        connection->WriteResponse();
 		return false;
 	}
 	
 	//调用处理函数
-	_get_handlers[path](connection);
+    ThreadPool::GetInstance()->commit([this, connection, path]() {
+        _get_handlers[path](connection);
+        // 执行完后由线程池里的线程来发送
+        connection->_response.result(http::status::ok);
+        //设置是哪个服务发过去的
+        connection->_response.set(http::field::server, "GateServer");
+        connection->WriteResponse();
+        });
+    //  _get_handlers[path](connection);
+   
 	return true;
 }
 
@@ -24,11 +44,28 @@ bool LogicSystem::HandlePost(std::string path, std::shared_ptr<HttpConnection> c
 {
     //如果在存放get请求的map里没找到对应路径 则直接返回false
     if (_post_handlers.find(path) == _post_handlers.end()) {
+        //如果失败
+       //设置结果
+        connection->_response.result(http::status::not_found);
+        //设置发送的类型,
+        // "text/plain" 是一种 MIME 类型（Multipurpose Internet Mail Extensions）
+        // 用于标识纯文本数据的内容类型
+        connection->_response.set(http::field::content_type, "text/plain");
+        //设置body内容
+        beast::ostream(connection->_response.body()) << "url not found\r\n";
+        connection->WriteResponse();
         return false;
     }
 
-    //调用处理函数
-    _post_handlers[path](connection);
+    ThreadPool::GetInstance()->commit([this, connection, path]() {
+        _post_handlers[path](connection);
+        // 执行完后由线程池里的线程来发送
+        connection->_response.result(http::status::ok);
+        //设置是哪个服务发过去的
+        connection->_response.set(http::field::server, "GateServer");
+        connection->WriteResponse();
+        });
+    //_post_handlers[path](connection);
     return true;
 }
 
@@ -44,7 +81,7 @@ void LogicSystem::RegPost(std::string url, HttpHandler handler)
 
 LogicSystem::LogicSystem()
 {
-    
+    ThreadPool::GetInstance();
 	RegGet("/get_test", [](std::shared_ptr<HttpConnection> connection) {
 		beast::ostream(connection->_response.body()) << "receive get_test req" << std::endl;
 		int i = 0;
@@ -95,6 +132,7 @@ LogicSystem::LogicSystem()
         auto rsp = VarifyGrpcClient::GetInstance()->GetVarifyCode(email);
 
         std::cout << "email is " << email << std::endl;
+        std::cout << rsp.error() << " " << src_root["email"] << std::endl;
         root["error"] = rsp.error();
         root["email"] = src_root["email"];
         //因为tcp是基于字节流的，所以要把json转为字符串

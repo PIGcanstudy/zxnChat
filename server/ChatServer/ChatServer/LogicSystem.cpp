@@ -9,13 +9,16 @@ using namespace std;
 
 LogicSystem::LogicSystem() :_b_stop(false) {
 	RegisterCallBacks();
-	//_worker_thread = std::thread(&LogicSystem::DealMsg, this);
+	_worker_thread = std::thread(&LogicSystem::DealMsg, this);
 }
 
 LogicSystem::~LogicSystem() {
 	_b_stop = true;
 	_consume.notify_all();
-	//_worker_thread.join();
+
+	if (_worker_thread.joinable()) {
+		_worker_thread.join();
+	}
 }
 
 void LogicSystem::PostMsgToQue(shared_ptr < LogicNode> msg) {
@@ -42,16 +45,8 @@ void LogicSystem::DealMsg() {
 			while (!_msg_que.empty()) {
 				auto msg_node = _msg_que.front();
 				_msg_que.pop();
-				cout << "recv_msg id  is " << msg_node->_recvnode->_msg_id << endl;
 				ThreadPool::GetInstance()->commit([this, msg_node]() {
-					auto call_back_iter = _fun_callbacks.find(msg_node->_recvnode->_msg_id);
-					if (call_back_iter != _fun_callbacks.end()) {
-						call_back_iter->second(msg_node->_session, msg_node->_recvnode->_msg_id,
-							std::string(msg_node->_recvnode->_data, msg_node->_recvnode->_cur_len));
-					}
-					else {
-						std::cout << "msg id [" << msg_node->_recvnode->_msg_id << "] handler not found" << std::endl;
-					}
+					ProcessMessage(msg_node);
 					});
 			}
 			break;
@@ -60,18 +55,24 @@ void LogicSystem::DealMsg() {
 		//如果没有停服，且说明队列中有数据
 		auto msg_node = _msg_que.front();
 		_msg_que.pop();
+		unique_lk.unlock();
 		cout << "recv_msg id  is " << msg_node->_recvnode->_msg_id << endl;
 		ThreadPool::GetInstance()->commit([this, msg_node]() {
-			auto call_back_iter = _fun_callbacks.find(msg_node->_recvnode->_msg_id);
-			if (call_back_iter != _fun_callbacks.end()) {
-				call_back_iter->second(msg_node->_session, msg_node->_recvnode->_msg_id,
-					std::string(msg_node->_recvnode->_data, msg_node->_recvnode->_cur_len));
-			}
-			else {
-				std::cout << "msg id [" << msg_node->_recvnode->_msg_id << "] handler not found" << std::endl;
-			}
+			ProcessMessage(msg_node);
 			});
 		
+	}
+}
+
+void LogicSystem::ProcessMessage(const std::shared_ptr<LogicNode>& msg_node) {
+	cout << "recv_msg id  is " << msg_node->_recvnode->_msg_id << endl;
+	auto call_back_iter = _fun_callbacks.find(msg_node->_recvnode->_msg_id);
+	if (call_back_iter != _fun_callbacks.end()) {
+		call_back_iter->second(msg_node->_session, msg_node->_recvnode->_msg_id,
+			std::string(msg_node->_recvnode->_data, msg_node->_recvnode->_cur_len));
+	}
+	else {
+		std::cout << "msg id [" << msg_node->_recvnode->_msg_id << "] handler not found" << std::endl;
 	}
 }
 

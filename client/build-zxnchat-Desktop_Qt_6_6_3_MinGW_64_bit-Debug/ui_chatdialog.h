@@ -14,14 +14,15 @@
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <chatuserlist.h>
 #include <clickedbtn.h>
+#include <customizeedit.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -41,11 +42,12 @@ public:
     QVBoxLayout *verticalLayout_2;
     QWidget *search_wid;
     QHBoxLayout *horizontalLayout_2;
-    QLineEdit *search_edit;
+    CustomizeEdit *search_edit;
     QSpacerItem *horizontalSpacer;
     ClickedBtn *add_btn;
-    QListWidget *chat_user_list;
+    ChatUserList *chat_user_list;
     QListWidget *search_list;
+    QListWidget *con_user_list;
     QWidget *chat_data_wid;
     QVBoxLayout *verticalLayout_4;
     QWidget *title_wid;
@@ -148,7 +150,7 @@ public:
         horizontalLayout_2->setSpacing(6);
         horizontalLayout_2->setObjectName("horizontalLayout_2");
         horizontalLayout_2->setContentsMargins(9, 9, 9, 9);
-        search_edit = new QLineEdit(search_wid);
+        search_edit = new CustomizeEdit(search_wid);
         search_edit->setObjectName("search_edit");
 
         horizontalLayout_2->addWidget(search_edit);
@@ -167,7 +169,7 @@ public:
 
         verticalLayout_2->addWidget(search_wid);
 
-        chat_user_list = new QListWidget(chat_user_wid);
+        chat_user_list = new ChatUserList(chat_user_wid);
         chat_user_list->setObjectName("chat_user_list");
 
         verticalLayout_2->addWidget(chat_user_list);
@@ -176,6 +178,11 @@ public:
         search_list->setObjectName("search_list");
 
         verticalLayout_2->addWidget(search_list);
+
+        con_user_list = new QListWidget(chat_user_wid);
+        con_user_list->setObjectName("con_user_list");
+
+        verticalLayout_2->addWidget(con_user_list);
 
 
         horizontalLayout->addWidget(chat_user_wid);

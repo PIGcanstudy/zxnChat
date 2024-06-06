@@ -63,6 +63,7 @@ public:
 
         user_info_wid = new QWidget(ChatUserWid);
         user_info_wid->setObjectName("user_info_wid");
+        user_info_wid->setMaximumSize(QSize(130, 16777215));
         verticalLayout = new QVBoxLayout(user_info_wid);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(2, 2, 2, 2);
@@ -73,6 +74,7 @@ public:
 
         user_chat_lb = new QLabel(user_info_wid);
         user_chat_lb->setObjectName("user_chat_lb");
+        user_chat_lb->setMaximumSize(QSize(130, 16777215));
 
         verticalLayout->addWidget(user_chat_lb);
 

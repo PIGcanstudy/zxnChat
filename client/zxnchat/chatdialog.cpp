@@ -3,6 +3,7 @@
 #include <QRandomGenerator>
 #include <QAction>
 #include "chatuserwid.h"
+#include "loadingdlg.h"
 
 ChatDialog::ChatDialog(QWidget *parent)
     : QDialog(parent)
@@ -41,7 +42,8 @@ ChatDialog::ChatDialog(QWidget *parent)
     ui->search_edit->SetMaxLength(15);
     ShowSearch(false);
 
-    addChatUseList();
+    connect(ui->chat_user_list, &ChatUserList::sig_loading_chat_user, this, &ChatDialog::slot_loading_chat_user);
+    addChatUserList();
 }
 
 ChatDialog::~ChatDialog()
@@ -73,7 +75,7 @@ std::vector<QString> names = {
     "rust"
 };
 
-void ChatDialog::addChatUseList()
+void ChatDialog::addChatUserList()
 {
     // 创建QListWidgetItem，并设置自定义的widget
     for(int i = 0; i <= 15; i++){
@@ -110,4 +112,22 @@ void ChatDialog::ShowSearch(bool bsearch)
         ui->con_user_list->show();
         _mode = ChatUIMode::ContactMode;
     }
+}
+
+void ChatDialog::slot_loading_chat_user()
+{
+    if(_b_loading){
+        return;
+    }
+
+    _b_loading = false;
+    LoadingDlg *loadingDialog = new LoadingDlg(this);
+    loadingDialog->setModal(true);
+    loadingDialog->show();
+    qDebug() << "add new data to list.....";
+    addChatUserList();
+    // 加载完成后关闭对话框
+    loadingDialog->deleteLater();
+
+    _b_loading = false;
 }

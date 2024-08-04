@@ -19,6 +19,9 @@ public:
                   QString select="", QString select_hover="", QString select_press="");
     // 得到当前的状态
     ClickLbState GetCurState();
+
+    bool SetCurState(ClickLbState state);
+    void ResetNormalState();
 protected:
 
 private:
@@ -33,7 +36,7 @@ private:
     ClickLbState _curstate;
 signals:
     // 点击信号
-    void clicked(void);
+    void clicked(QString, ClickLbState);
 
 };
 

@@ -9,16 +9,17 @@
 #ifndef UI_CHATPAGE_H
 #define UI_CHATPAGE_H
 
+#include <ChatView.h>
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QSpacerItem>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include <clickedbtn.h>
 #include <clickedlabel.h>
+#include "MessageTextEdit.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -33,7 +34,7 @@ public:
     QWidget *widget_2;
     QVBoxLayout *verticalLayout_6;
     QLabel *title_lb;
-    QWidget *chat_data_list;
+    ChatView *chat_data_list;
     QWidget *tool_wid;
     QHBoxLayout *horizontalLayout_3;
     QSpacerItem *horizontalSpacer_2;
@@ -41,7 +42,7 @@ public:
     QSpacerItem *horizontalSpacer_3;
     ClickedLabel *file_lb;
     QSpacerItem *horizontalSpacer_4;
-    QTextEdit *chat_edit;
+    MessageTextEdit *chat_edit;
     QWidget *send_wid;
     QHBoxLayout *horizontalLayout_4;
     QSpacerItem *horizontalSpacer_5;
@@ -87,7 +88,7 @@ public:
 
         verticalLayout_4->addWidget(title_wid);
 
-        chat_data_list = new QWidget(chat_data_wid);
+        chat_data_list = new ChatView(chat_data_wid);
         chat_data_list->setObjectName("chat_data_list");
 
         verticalLayout_4->addWidget(chat_data_list);
@@ -128,7 +129,7 @@ public:
 
         verticalLayout_4->addWidget(tool_wid);
 
-        chat_edit = new QTextEdit(chat_data_wid);
+        chat_edit = new MessageTextEdit(chat_data_wid);
         chat_edit->setObjectName("chat_edit");
         chat_edit->setMinimumSize(QSize(0, 150));
         chat_edit->setMaximumSize(QSize(16777215, 150));

@@ -19,3 +19,4 @@ std::function<QString(QString)> xorString = [](QString input)->QString{
     }
     return result;
 };
+

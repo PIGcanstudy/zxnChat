@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 
     QDir dir(app_path);
 
-    app_path = dir.absolutePath() + "/..";
+    app_path = dir.absolutePath();
     // 拼接文件名
     QString fileName = "config.ini";
     //设置路径

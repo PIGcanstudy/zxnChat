@@ -45,6 +45,12 @@
     <ClCompile Include="StatusServiceImpl.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="StatusServer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChatGrpcClient.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="const.h">
@@ -81,6 +87,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="StatusServiceImpl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChatGrpcClient.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

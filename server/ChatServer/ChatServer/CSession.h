@@ -28,7 +28,9 @@ public:
 	CSession(boost::asio::io_context& io_context, CServer* server);
 	~CSession();
 	tcp::socket& GetSocket();
-	std::string& GetUuid();
+	std::string& GetSessionUuid();
+	int GetUserId();
+	void SetUserId(int uid);
 	void Start();
 	void Send(char* msg,  short max_length, short msgid);
 	void Send(std::string msg, short msgid);
@@ -46,7 +48,8 @@ private:
 	
 	void HandleWrite(const boost::system::error_code& error, std::shared_ptr<CSession> shared_self);
 	tcp::socket _socket;
-	std::string _uuid;
+	std::string _session_uuid;
+	int _user_uid;
 
 	// 用于临时存储接收的数据。
 	char _data[MAX_LENGTH];

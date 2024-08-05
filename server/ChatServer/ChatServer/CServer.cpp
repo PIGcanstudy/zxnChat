@@ -6,6 +6,7 @@
 #include <json/value.h>
 #include <json/reader.h>
 #include "LogicSystem.h"
+#include "UserMgr.h"
 CServer::CServer(boost::asio::io_context& ioc, unsigned short port): _ioc(ioc), _port(port),
 _acceptor(ioc, tcp::endpoint(tcp::v4(), port)){
 	std::cout << "Server start success, listen on port: " << _port << std::endl;
@@ -26,10 +27,17 @@ CServer::~CServer()
 	cout << "Server destruct listen on port : " << _port << endl;
 }
 
-void CServer::ClearSession(std::string uuid)
+void CServer::ClearSession(std::string session_id)
 {
-	lock_guard<mutex> lock(_mutex);
-	_sessions.erase(uuid);
+	if (_sessions.find(session_id) != _sessions.end()) {
+		//移除用户和session的关联
+		UserMgr::GetInstance()->RmvUserSession(_sessions[session_id]->GetUserId());
+	}
+
+	{
+		lock_guard<mutex> lock(_mutex);
+		_sessions.erase(session_id);
+	}
 }
 
 void CServer::HandleAccept(shared_ptr<CSession> new_session, const boost::system::error_code& error)
@@ -40,7 +48,7 @@ void CServer::HandleAccept(shared_ptr<CSession> new_session, const boost::system
 
 		lock_guard<mutex> lock(_mutex);
 		// 插入_sessions中
-		_sessions.insert(make_pair(new_session->GetUuid(), new_session));
+		_sessions.insert(make_pair(new_session->GetSessionUuid(), new_session));
 	}
 	else {
 		cout << "session accept failed, error is " << error.what() << endl;

@@ -10,7 +10,7 @@ class CServer: public std::enable_shared_from_this<CServer>
 public:
 	CServer(boost::asio::io_context& ioc, unsigned short port);
 	~CServer();
-	void ClearSession(std::string uuid);
+	void ClearSession(std::string session_id);
 private:
 	void HandleAccept(shared_ptr<CSession> new_session, const boost::system::error_code& error);
 	void StartAccept();

@@ -31,6 +31,9 @@ private:
 	void LoginHandler(shared_ptr<CSession>, const short& msg_id, const string& msg_data);
 	// 消息逻辑处理投递给线程池
 	void ProcessMessage(const std::shared_ptr<LogicNode>& msg_node);
+
+	// 获取用户信息
+	bool GetBaseInfo(std::string base_key, int uid, std::shared_ptr<UserInfo>& userinfo);
 	//还需要工作线程来消费逻辑消息
 	std::thread _worker_thread;
 	//用来存储逻辑节点
@@ -43,7 +46,5 @@ private:
 	bool _b_stop;
 	//用来存储回调函数，也就是注册进来
 	std::unordered_map<short, FunCallBack> _fun_callbacks;
-	// 记录用户的信息
-	std::unordered_map<int, std::shared_ptr<UserInfo>> _users;
 };
 

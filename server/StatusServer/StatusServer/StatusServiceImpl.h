@@ -45,9 +45,13 @@ private:
 	std::unordered_map<std::string, ChatServer> _servers;
 	// 保护 _servers 的互斥锁
 	std::mutex _server_mtx;
+
+	// 当用户量上来后 存在这就会占用服务器大量内存所以考虑存在redis中
+	/*
 	// 用户 token 映射
 	std::unordered_map<int, std::string> _tokens;
 	// 保护 _tokens 的互斥锁
 	std::mutex _token_mtx;
+	*/
 };
 

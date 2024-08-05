@@ -3,6 +3,7 @@
 #include "boost/uuid/uuid_generators.hpp"
 
 #include "const.h"
+#include "RedisMgr.h"
 #include <boost/uuid/uuid.hpp>
 #include <boost/uuid/uuid_io.hpp>
 
@@ -36,33 +37,65 @@ Status StatusServiceImpl::GetChatServer(ServerContext* context, const GetChatSer
 StatusServiceImpl::StatusServiceImpl()
 {
 	auto& cfg = ConfigMgr::GetInstance();
-	ChatServer server;
 
-	// 初始化第二个聊天服务器
-	server.port = cfg["ChatServer2"]["Port"];
-	server.host = cfg["ChatServer2"]["Host"];
-	server.name = cfg["ChatServer2"]["Name"];
-	server.con_count = 0;
-	_servers[server.name] = server;
+	std::vector<std::string> words;
 
-	// 初始化第一个聊天服务器
-	server.port = cfg["ChatServer1"]["Port"];
-	server.host = cfg["ChatServer1"]["Host"];
-	server.con_count = 0;
-	server.name = cfg["ChatServer1"]["Name"];
-	_servers[server.name] = server;
+	// 读出server列表 
+	auto server_list = cfg["ChatServers"]["Name"];
+
+	// ChatServers
+
+	std::stringstream ss(server_list);
+	std::string word;
+
+	// 读出每个server的具体名字
+	while (std::getline(ss, word, ',')) {
+		words.emplace_back(word);
+	}
+
+	// 读出每个server的具体属性并存下来
+	for (auto& w : words) {
+		if (cfg[w]["Name"].empty()) {
+			continue;
+		}
+
+		ChatServer server;
+		server.name = cfg[w]["Name"];
+		server.host = cfg[w]["Host"];
+		server.port = cfg[w]["Port"];
+		_servers[server.name] = server;
+	}
 }
 
 // 获取连接数最少的聊天服务器
 ChatServer StatusServiceImpl::getChatServer() {
-
 	std::lock_guard<std::mutex> guard(_server_mtx);
-
 	auto minServer = _servers.begin()->second;
+
+	// 从redis中取出最新的服务器里连接客户端数量
+	auto count_str = RedisMgr::GetInstance()->HGet(LOGIN_COUNT, minServer.name);
+	if (count_str.empty()) {
+		//不存在则默认设置为最大
+		minServer.con_count = INT_MAX;
+	}
+	else {
+		minServer.con_count = std::stoi(count_str);
+	}
+
 	// 使用范围基于for循环
-	for (const auto& server : _servers) {
-		// 遍历服务器列表，选择连接数最少的服务器
-		// con_count 是chatserver用来返回连接数量的
+	for (auto& server : _servers) {
+		if (server.second.name == minServer.name) {
+			continue;
+		}
+
+		auto count_str = RedisMgr::GetInstance()->HGet(LOGIN_COUNT, server.second.name);
+		if (count_str.empty()) {
+			server.second.con_count = INT_MAX;
+		}
+		else {
+			server.second.con_count = std::stoi(count_str);
+		}
+
 		if (server.second.con_count < minServer.con_count) {
 			minServer = server.second;
 		}
@@ -76,19 +109,18 @@ Status StatusServiceImpl::Login(ServerContext* context, const LoginReq* request,
 {
 	auto uid = request->uid();
 	auto token = request->token();
-	// 保证线程安全
-	std::lock_guard<std::mutex> guard(_token_mtx);
 
-	auto iter = _tokens.find(uid);
+	std::string uid_str = std::to_string(uid);
+	std::string token_key = USERTOKENPREFIX + uid_str;
+	std::string token_value = "";
 
-	// 用户id无效
-	if (iter == _tokens.end()) {
+	bool success = RedisMgr::GetInstance()->Get(token_key, token_value);
+	if (!success) {
 		reply->set_error(ErrorCodes::UidInvalid);
 		return Status::OK;
 	}
 
-	// 用户token无效
-	if (iter->second != token) {
+	if (token_value != token) {
 		reply->set_error(ErrorCodes::TokenInvalid);
 		return Status::OK;
 	}
@@ -102,7 +134,9 @@ Status StatusServiceImpl::Login(ServerContext* context, const LoginReq* request,
 // 插入用户 token
 void StatusServiceImpl::insertToken(int uid, std::string token)
 {
-	std::lock_guard<std::mutex> guard(_token_mtx);
-	_tokens[uid] = token;
+	std::string uid_str = std::to_string(uid);
+	// 拼成key值
+	std::string token_key = USERTOKENPREFIX + uid_str;
+	RedisMgr::GetInstance()->Set(token_key, token);
 }
 

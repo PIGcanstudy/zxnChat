@@ -19,6 +19,7 @@ CSession::CSession(boost::asio::io_context& io_context, CServer* server):
 	// 构造头部节点
 	_recv_head_node = make_shared<MsgNode>(HEAD_TOTAL_LEN);
 }
+
 CSession::~CSession() {
 	Close();
 	std::cout << "~CSession destruct" << endl;

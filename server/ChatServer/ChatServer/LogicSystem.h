@@ -13,14 +13,14 @@
 #include <unordered_map>
 #include "data.h"
 
-typedef  function<void(shared_ptr<CSession>, const short& msg_id, const string& msg_data)> FunCallBack;
+typedef  function<void(std::shared_ptr<CSession>, const short& msg_id, const std::string& msg_data)> FunCallBack;
 
 class LogicSystem :public Singleton<LogicSystem>
 {
 	friend class Singleton<LogicSystem>;
 public:
 	~LogicSystem();
-	void PostMsgToQue(shared_ptr < LogicNode> msg);
+	void PostMsgToQue(std::shared_ptr < LogicNode> msg);
 private:
 	LogicSystem();
 	// 处理信息
@@ -28,7 +28,20 @@ private:
 	//注册功能
 	void RegisterCallBacks();
 	// 登录逻辑的处理
-	void LoginHandler(shared_ptr<CSession>, const short& msg_id, const string& msg_data);
+	void LoginHandler(std::shared_ptr<CSession>, const short& msg_id, const std::string& msg_data);
+	
+	// 查找好友逻辑的处理
+	void SearchUserHandler(std::shared_ptr<CSession> session, const short& msg_id, const std::string& msg_data);
+
+	// 判断是不是纯数字
+	bool isPureDigit(const std::string& str);
+
+	// 是纯数字就根据uid查
+	void GetUserByUid(std::string uid_str, Json::Value& rtvalue);
+
+	// 不是就根据name查
+	void GetUserByName(std::string name, Json::Value& rtvalue);
+
 	// 消息逻辑处理投递给线程池
 	void ProcessMessage(const std::shared_ptr<LogicNode>& msg_node);
 
@@ -37,7 +50,7 @@ private:
 	//还需要工作线程来消费逻辑消息
 	std::thread _worker_thread;
 	//用来存储逻辑节点
-	std::queue<shared_ptr<LogicNode>> _msg_que;
+	std::queue<std::shared_ptr<LogicNode>> _msg_que;
 	std::mutex _mutex;
 	//由于有消息队列，所以需要阻塞线程，所以需要
 	//条件变量来通知被阻塞的线程

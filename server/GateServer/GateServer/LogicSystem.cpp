@@ -28,10 +28,10 @@ bool LogicSystem::HandleGet(std::string path, std::shared_ptr<HttpConnection> co
 	
 	//调用处理函数
     ThreadPool::GetInstance()->commit([this, connection, path]() {
-        _get_handlers[path](connection);
-        // 执行完后由线程池里的线程来发送
+        std::cout << "Handling request for path: " << path << std::endl;
+        _post_handlers[path](connection);
+        std::cout << "Request for path: " << path << " has been processed." << std::endl;
         connection->_response.result(http::status::ok);
-        //设置是哪个服务发过去的
         connection->_response.set(http::field::server, "GateServer");
         connection->WriteResponse();
         });
@@ -58,10 +58,10 @@ bool LogicSystem::HandlePost(std::string path, std::shared_ptr<HttpConnection> c
     }
 
     ThreadPool::GetInstance()->commit([this, connection, path]() {
+        std::cout << "Handling request for path: " << path << std::endl;
         _post_handlers[path](connection);
-        // 执行完后由线程池里的线程来发送
+        std::cout << "Request for path: " << path << " has been processed." << std::endl;
         connection->_response.result(http::status::ok);
-        //设置是哪个服务发过去的
         connection->_response.set(http::field::server, "GateServer");
         connection->WriteResponse();
         });

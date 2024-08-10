@@ -171,7 +171,7 @@ bool MysqlDao::CheckPwd(const std::string& email, const std::string& pwd, UserIn
 		std::unique_ptr<sql::PreparedStatement> pstmt(con->_con->prepareStatement("SELECT * FROM user WHERE email = ?"));
 		pstmt->setString(1, email); // 将username替换为你要查询的用户名
 
-		std::cout << "email is" << email << std::endl;
+		std::cout << "email is " << email << std::endl;
 
 		// 执行查询
 		std::unique_ptr<sql::ResultSet> res(pstmt->executeQuery());

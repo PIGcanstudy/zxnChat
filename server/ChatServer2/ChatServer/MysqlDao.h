@@ -15,8 +15,10 @@ public:
 	bool UpdatePwd(const std::string& name, const std::string& newpwd);
 	// 检测密码是否存在
 	bool CheckPwd(const std::string& email, const std::string& pwd, UserInfo& userInfo);
-	// 从数据库中获取user信息
+	// 从数据库中根据uid获取user信息
 	std::shared_ptr<UserInfo> GetUser(int uid);
+	// 从数据库中根据name获取user信息
+	std::shared_ptr<UserInfo> GetUser(std::string& name);
 private:
 	std::unique_ptr<MySqlPool> _pool;
 	UserInfo userInfo;

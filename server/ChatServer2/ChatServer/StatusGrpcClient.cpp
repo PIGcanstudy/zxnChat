@@ -88,8 +88,9 @@ LoginRsp StatusGrpcClient::Login(int uid, std::string token)
 
 	auto stub = pool_->getConnection();
 
+	std::cout << "handling login!\n";
 	Status status = stub->Login(&context, request, &reply);
-	
+	std::cout << " login ok!\n";
 	Defer defer([&stub, this]() {
 		pool_->returnConnection(std::move(stub));
 		});

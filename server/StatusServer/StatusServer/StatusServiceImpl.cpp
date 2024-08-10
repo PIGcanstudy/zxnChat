@@ -22,8 +22,10 @@ std::string generate_unique_string() {
 Status StatusServiceImpl::GetChatServer(ServerContext* context, const GetChatServerReq* request, GetChatServerRsp* reply)
 {
 	std::string prefix("chat status server has received :  ");
+	std::cout << "handling getChatServer!\n";
 	// 获取负载最少的聊天服务器
 	const auto& server = getChatServer();
+	std::cout << "getChatServer ok!\n";
 	reply->set_host(server.host);
 	reply->set_port(server.port);
 	reply->set_error(ErrorCodes::Success);
@@ -64,13 +66,16 @@ StatusServiceImpl::StatusServiceImpl()
 		server.host = cfg[w]["Host"];
 		server.port = cfg[w]["Port"];
 		_servers[server.name] = server;
+		std::cout << "server is " << server.name << " Host is " << server.host << std::endl;
 	}
 }
 
 // 获取连接数最少的聊天服务器
 ChatServer StatusServiceImpl::getChatServer() {
+
+	std::cout << "1 \n";
 	std::lock_guard<std::mutex> guard(_server_mtx);
-	auto minServer = _servers.begin()->second;
+	ChatServer minServer = _servers.begin()->second;
 
 	// 从redis中取出最新的服务器里连接客户端数量
 	auto count_str = RedisMgr::GetInstance()->HGet(LOGIN_COUNT, minServer.name);
@@ -100,7 +105,7 @@ ChatServer StatusServiceImpl::getChatServer() {
 			minServer = server.second;
 		}
 	}
-
+	std::cout << "minServer is " << minServer.name << std::endl;
 	return minServer;
 }
 
@@ -114,7 +119,9 @@ Status StatusServiceImpl::Login(ServerContext* context, const LoginReq* request,
 	std::string token_key = USERTOKENPREFIX + uid_str;
 	std::string token_value = "";
 
+	std::cout << "handling Redis Get!\n";
 	bool success = RedisMgr::GetInstance()->Get(token_key, token_value);
+	std::cout << "Redis Get ok!\n";
 	if (!success) {
 		reply->set_error(ErrorCodes::UidInvalid);
 		return Status::OK;

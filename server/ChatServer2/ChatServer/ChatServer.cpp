@@ -26,13 +26,14 @@ int main()
 		RedisMgr::GetInstance()->HSet(LOGIN_COUNT, server_name, "0");
 
 		//定义一个GrpcServer
-
 		std::string server_address(cfg["SelfServer"]["Host"] + ":" + cfg["SelfServer"]["RPCPort"]);
 		ChatServiceImpl service;
 		grpc::ServerBuilder builder;
+
 		// 监听端口和添加服务
 		builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
 		builder.RegisterService(&service);
+
 		// 构建并启动gRPC服务器
 		std::unique_ptr<grpc::Server> server(builder.BuildAndStart());
 		std::cout << "RPC Server listening on " << server_address << std::endl;
@@ -53,6 +54,7 @@ int main()
 		CServer s(io_context, atoi(port_str.c_str()));
 		io_context.run();
 
+		// 服务器关闭后的操作
 		RedisMgr::GetInstance()->HDel(LOGIN_COUNT, server_name);
 		RedisMgr::GetInstance()->Close();
 		grpc_server_thread.join();

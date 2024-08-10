@@ -19,6 +19,7 @@ public:
 	bool CheckPwd(const std::string& email, const std::string& pwd, UserInfo& userinfo);
 	// 获取user接口
 	std::shared_ptr<UserInfo> GetUser(int uid);
+	std::shared_ptr<UserInfo> GetUser(std::string& name);
 private:
 	MysqlMgr();
 	MysqlDao  _dao;

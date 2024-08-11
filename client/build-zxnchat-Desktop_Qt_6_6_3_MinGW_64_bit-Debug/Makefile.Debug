@@ -376,15 +376,20 @@ debug/qrc_rc.cpp: ../zxnchat/rc.qrc \
 		../../../Qt/6.6.3/mingw_64/bin/rcc.exe \
 		../zxnchat/style/stylesheet.qss \
 		../zxnchat/res/head_6.jpg \
+		../zxnchat/res/voice_chat_hover.png \
 		../zxnchat/res/contact_list_press.png \
 		../zxnchat/res/tipclose.png \
+		../zxnchat/res/add_friend.png \
 		../zxnchat/res/head_4.jpg \
+		../zxnchat/res/voice_chat_press.png \
 		../zxnchat/res/head_1.jpg \
+		../zxnchat/res/video_chat_press.png \
 		../zxnchat/res/filedir.png \
 		../zxnchat/res/chat_icon_press.png \
 		../zxnchat/res/right_tip.png \
 		../zxnchat/res/search.png \
 		../zxnchat/res/head_3.jpg \
+		../zxnchat/res/voice_chat_normal.png \
 		../zxnchat/res/ice.png \
 		../zxnchat/res/smile_hover.png \
 		../zxnchat/res/head_5.jpg \
@@ -393,20 +398,28 @@ debug/qrc_rc.cpp: ../zxnchat/rc.qrc \
 		../zxnchat/res/addtip.png \
 		../zxnchat/res/chat_icon_hover.png \
 		../zxnchat/res/filedir_hover.png \
+		../zxnchat/res/msg_chat_hover.png \
+		../zxnchat/res/video_chat_normal.png \
 		../zxnchat/res/unvisible.png \
+		../zxnchat/res/male.png \
 		../zxnchat/res/add_friend_normal.png \
 		../zxnchat/res/close_search.png \
 		../zxnchat/res/contact_list.png \
+		../zxnchat/res/msg_chat_press.png \
 		../zxnchat/res/contact_list_hover.png \
+		../zxnchat/res/msg_chat_normal.png \
 		../zxnchat/res/loading.gif \
 		../zxnchat/res/unvisible_hover.png \
 		../zxnchat/res/head_7.png \
 		../zxnchat/res/smile.png \
 		../zxnchat/res/arowdown.png \
+		../zxnchat/res/female.png \
+		../zxnchat/res/video_chat_hover.png \
 		../zxnchat/res/visible.png \
 		../zxnchat/res/chat_icon_select_hover.png \
 		../zxnchat/res/visible_hover.png \
 		../zxnchat/res/chat_icon_select_press.png \
+		../zxnchat/res/red_point.png \
 		../zxnchat/res/smile_press.png \
 		../zxnchat/res/add_friend_hover.png \
 		../zxnchat/res/filedir_press.png \

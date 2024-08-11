@@ -376,15 +376,20 @@ debug/qrc_rc.cpp: ../zxnchat_copy/rc.qrc \
 		../../../Qt/6.6.3/mingw_64/bin/rcc.exe \
 		../zxnchat_copy/style/stylesheet.qss \
 		../zxnchat_copy/res/head_6.jpg \
+		../zxnchat_copy/res/voice_chat_hover.png \
 		../zxnchat_copy/res/contact_list_press.png \
 		../zxnchat_copy/res/tipclose.png \
+		../zxnchat_copy/res/add_friend.png \
 		../zxnchat_copy/res/head_4.jpg \
+		../zxnchat_copy/res/voice_chat_press.png \
 		../zxnchat_copy/res/head_1.jpg \
+		../zxnchat_copy/res/video_chat_press.png \
 		../zxnchat_copy/res/filedir.png \
 		../zxnchat_copy/res/chat_icon_press.png \
 		../zxnchat_copy/res/right_tip.png \
 		../zxnchat_copy/res/search.png \
 		../zxnchat_copy/res/head_3.jpg \
+		../zxnchat_copy/res/voice_chat_normal.png \
 		../zxnchat_copy/res/ice.png \
 		../zxnchat_copy/res/smile_hover.png \
 		../zxnchat_copy/res/head_5.jpg \
@@ -393,20 +398,28 @@ debug/qrc_rc.cpp: ../zxnchat_copy/rc.qrc \
 		../zxnchat_copy/res/addtip.png \
 		../zxnchat_copy/res/chat_icon_hover.png \
 		../zxnchat_copy/res/filedir_hover.png \
+		../zxnchat_copy/res/msg_chat_hover.png \
+		../zxnchat_copy/res/video_chat_normal.png \
 		../zxnchat_copy/res/unvisible.png \
+		../zxnchat_copy/res/male.png \
 		../zxnchat_copy/res/add_friend_normal.png \
 		../zxnchat_copy/res/close_search.png \
 		../zxnchat_copy/res/contact_list.png \
+		../zxnchat_copy/res/msg_chat_press.png \
 		../zxnchat_copy/res/contact_list_hover.png \
+		../zxnchat_copy/res/msg_chat_normal.png \
 		../zxnchat_copy/res/loading.gif \
 		../zxnchat_copy/res/unvisible_hover.png \
 		../zxnchat_copy/res/head_7.png \
 		../zxnchat_copy/res/smile.png \
 		../zxnchat_copy/res/arowdown.png \
+		../zxnchat_copy/res/female.png \
+		../zxnchat_copy/res/video_chat_hover.png \
 		../zxnchat_copy/res/visible.png \
 		../zxnchat_copy/res/chat_icon_select_hover.png \
 		../zxnchat_copy/res/visible_hover.png \
 		../zxnchat_copy/res/chat_icon_select_press.png \
+		../zxnchat_copy/res/red_point.png \
 		../zxnchat_copy/res/smile_press.png \
 		../zxnchat_copy/res/add_friend_hover.png \
 		../zxnchat_copy/res/filedir_press.png \
@@ -16038,7 +16051,38 @@ debug/adduseritem.o: ../zxnchat_copy/adduseritem.cpp ../zxnchat_copy/adduseritem
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qjsondocument.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QSettings \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qsettings.h \
-		ui_adduseritem.h
+		ui_adduseritem.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QApplication \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qeventloop.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfutureinterface.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qmutex.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qdeadlinetimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qelapsedtimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qtsan_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qresultstore.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthreadpool.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthread.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qrunnable.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qinputmethod.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLabel \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlabel.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qframe.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qpicture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextdocument.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\adduseritem.o ..\zxnchat_copy\adduseritem.cpp
 
 debug/applyfriend.o: ../zxnchat_copy/applyfriend.cpp ../zxnchat_copy/applyfriend.h \
@@ -16261,6 +16305,51 @@ debug/applyfriend.o: ../zxnchat_copy/applyfriend.cpp ../zxnchat_copy/applyfriend
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QJsonArray \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qjsonarray.h \
 		ui_applyfriend.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QApplication \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qeventloop.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfutureinterface.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qmutex.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qdeadlinetimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qelapsedtimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qtsan_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qresultstore.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthreadpool.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthread.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qrunnable.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qinputmethod.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QScrollArea \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qscrollarea.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QSpacerItem \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QVBoxLayout \
+		../zxnchat_copy/clickedbtn.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QPushButton \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractbutton.h \
+		../zxnchat_copy/clickedoncelabel.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/QMouseEvent \
+		../zxnchat_copy/customizeedit.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLineEdit \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlineedit.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextcursor.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextformat.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qpen.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextoption.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QDebug \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QScrollBar \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qscrollbar.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractslider.h \
@@ -16480,7 +16569,44 @@ debug/applyfrienditem.o: ../zxnchat_copy/applyfrienditem.cpp ../zxnchat_copy/app
 		../zxnchat_copy/userdata.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QJsonArray \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qjsonarray.h \
-		ui_applyfrienditem.h
+		ui_applyfrienditem.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QApplication \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qeventloop.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfutureinterface.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qmutex.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qdeadlinetimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qelapsedtimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qtsan_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qresultstore.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthreadpool.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthread.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qrunnable.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qinputmethod.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLabel \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlabel.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qframe.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qpicture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextdocument.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QSpacerItem \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QVBoxLayout \
+		../zxnchat_copy/clickedbtn.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QPushButton \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractbutton.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\applyfrienditem.o ..\zxnchat_copy\applyfrienditem.cpp
 
 debug/applyfriendlist.o: ../zxnchat_copy/applyfriendlist.cpp ../zxnchat_copy/applyfriendlist.h \
@@ -16925,12 +17051,48 @@ debug/applyfriendpage.o: ../zxnchat_copy/applyfriendpage.cpp ../zxnchat_copy/app
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QSettings \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qsettings.h \
 		ui_applyfriendpage.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/QPainter \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qpainter.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextoption.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qpen.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/QPaintEvent \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QStyleOption \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QApplication \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qeventloop.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfutureinterface.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qmutex.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qdeadlinetimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qelapsedtimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qtsan_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qresultstore.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthreadpool.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthread.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qrunnable.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qinputmethod.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLabel \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlabel.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qframe.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qpicture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextdocument.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QSpacerItem \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QVBoxLayout \
+		../zxnchat_copy/applyfriendlist.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QListWidget \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlistwidget.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlistview.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractitemview.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qabstractitemmodel.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qitemselectionmodel.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qstyleoption.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractspinbox.h \
 		../../../Qt/6.6.3/mingw_64/include/QtGui/qvalidator.h \
@@ -16939,18 +17101,19 @@ debug/applyfriendpage.o: ../zxnchat_copy/applyfriendpage.cpp ../zxnchat_copy/app
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qtabbar.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qtabwidget.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qrubberband.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qframe.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qabstractitemmodel.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QEvent \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/QPainter \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qpainter.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextoption.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qpen.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/QPaintEvent \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QStyleOption \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QRandomGenerator \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qrandom.h \
 		../zxnchat_copy/authenfriend.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QDialog \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qdialog.h \
 		../zxnchat_copy/clickedlabel.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLabel \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlabel.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qpicture.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextdocument.h \
 		../zxnchat_copy/friendlabel.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QFrame \
 		../zxnchat_copy/applyfriend.h \
@@ -17180,6 +17343,51 @@ debug/authenfriend.o: ../zxnchat_copy/authenfriend.cpp ../zxnchat_copy/authenfri
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QJsonArray \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qjsonarray.h \
 		ui_authenfriend.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QApplication \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qeventloop.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfutureinterface.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qmutex.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qdeadlinetimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qelapsedtimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qtsan_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qresultstore.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthreadpool.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthread.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qrunnable.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qinputmethod.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QScrollArea \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qscrollarea.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QSpacerItem \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QVBoxLayout \
+		../zxnchat_copy/clickedbtn.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QPushButton \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractbutton.h \
+		../zxnchat_copy/clickedoncelabel.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/QMouseEvent \
+		../zxnchat_copy/customizeedit.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLineEdit \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlineedit.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextcursor.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextformat.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qpen.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextoption.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QDebug \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QScrollBar \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qscrollbar.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractslider.h \
@@ -17425,20 +17633,67 @@ debug/chatdialog.o: ../zxnchat_copy/chatdialog.cpp ../zxnchat_copy/chatdialog.h 
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qtabwidget.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qrubberband.h \
 		ui_chatdialog.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/QAction \
-		../zxnchat_copy/chatuserwid.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QApplication \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qeventloop.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfutureinterface.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qmutex.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qdeadlinetimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qelapsedtimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qtsan_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qresultstore.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthreadpool.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthread.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qrunnable.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qinputmethod.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QSpacerItem \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QStackedWidget \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qstackedwidget.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QVBoxLayout \
+		../zxnchat_copy/applyfriendpage.h \
+		../zxnchat_copy/applyfrienditem.h \
 		../zxnchat_copy/listitembase.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/QDebug \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/QRandomGenerator \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qrandom.h \
-		../zxnchat_copy/loadingdlg.h \
-		../zxnchat_copy/friendinfopage.h \
 		../zxnchat_copy/chatuserlist.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QListWidget \
 		../../../Qt/6.6.3/mingw_64/include/QtGui/QWheelEvent \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QEvent \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QScrollBar \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qscrollbar.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QDebug \
+		../zxnchat_copy/clickedbtn.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QPushButton \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractbutton.h \
+		../zxnchat_copy/contactuserlist.h \
+		../zxnchat_copy/customizeedit.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLineEdit \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlineedit.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextcursor.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextformat.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qpen.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextoption.h \
+		../zxnchat_copy/friendinfopage.h \
+		../zxnchat_copy/chatpage.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QMap \
+		../zxnchat_copy/searchlist.h \
+		../zxnchat_copy/loadingdlg.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/QAction \
+		../zxnchat_copy/chatuserwid.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QRandomGenerator \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qrandom.h \
 		../zxnchat_copy/grouptipitem.h \
 		../zxnchat_copy/invaliditem.h \
 		../zxnchat_copy/conuseritem.h \
@@ -17629,34 +17884,55 @@ debug/chatpage.o: ../zxnchat_copy/chatpage.cpp ../zxnchat_copy/chatpage.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qjsonobject.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QMap \
 		ui_chatpage.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QStyleOption \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qstyleoption.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractspinbox.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qvalidator.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qslider.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractslider.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qstyle.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qtabbar.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qtabwidget.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qrubberband.h \
+		../zxnchat_copy/ChatView.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QScrollArea \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qscrollarea.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractscrollarea.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qframe.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qabstractitemmodel.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/QPainter \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qpainter.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextoption.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qpen.h \
-		../zxnchat_copy/ChatItemBase.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QGridLayout \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QVBoxLayout \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qboxlayout.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayout.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QTimer \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qtimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qbasictimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QVariant \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QApplication \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qeventloop.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfutureinterface.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qmutex.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qdeadlinetimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qelapsedtimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qtsan_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qresultstore.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthreadpool.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthread.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qrunnable.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qinputmethod.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QHBoxLayout \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLabel \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlabel.h \
 		../../../Qt/6.6.3/mingw_64/include/QtGui/qpicture.h \
 		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextdocument.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QSpacerItem \
+		../zxnchat_copy/clickedbtn.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QPushButton \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractbutton.h \
+		../zxnchat_copy/clickedlabel.h \
 		../zxnchat_copy/global.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QStyle \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qstyle.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QRegularExpression \
 		../../../Qt/6.6.3/mingw_64/include/QtNetwork/QNetworkAccessManager \
 		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qnetworkaccessmanager.h \
@@ -17666,7 +17942,6 @@ debug/chatpage.o: ../zxnchat_copy/chatpage.cpp ../zxnchat_copy/chatpage.h \
 		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qnetworkrequest.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QSharedDataPointer \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QUrl \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/QVariant \
 		../../../Qt/6.6.3/mingw_64/include/QtNetwork/QSslConfiguration \
 		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qsslconfiguration.h \
 		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qsslsocket.h \
@@ -17685,15 +17960,47 @@ debug/chatpage.o: ../zxnchat_copy/chatpage.cpp ../zxnchat_copy/chatpage.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qjsondocument.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QSettings \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qsettings.h \
-		../zxnchat_copy/TextBubble.h \
+		../zxnchat_copy/MessageTextEdit.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QTextEdit \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qtextedit.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextoption.h \
 		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextcursor.h \
 		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextformat.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qpen.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/QMouseEvent \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/QDrag \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qdrag.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QMimeData \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qmimedata.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QMimeType \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qmimetype.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QFileInfo \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfileinfo.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfile.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfiledevice.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qtimezone.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QFileIconProvider \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qfileiconprovider.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qabstractfileiconprovider.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/QPainter \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qpainter.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QVector \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qvector.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QStyleOption \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qstyleoption.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qvalidator.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qslider.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractslider.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qtabbar.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qtabwidget.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qrubberband.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qabstractitemmodel.h \
+		../zxnchat_copy/ChatItemBase.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QGridLayout \
+		../zxnchat_copy/TextBubble.h \
 		../zxnchat_copy/BubbleFrame.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QFrame \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QHBoxLayout \
 		../zxnchat_copy/PictureBubble.h \
 		../../../Qt/6.6.3/mingw_64/include/QtGui/QPixmap \
 		../zxnchat_copy/applyfrienditem.h \
@@ -18104,7 +18411,39 @@ debug/chatuserwid.o: ../zxnchat_copy/chatuserwid.cpp ../zxnchat_copy/chatuserwid
 		../zxnchat_copy/userdata.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QJsonArray \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qjsonarray.h \
-		ui_chatuserwid.h
+		ui_chatuserwid.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QApplication \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qeventloop.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfutureinterface.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qmutex.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qdeadlinetimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qelapsedtimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qtsan_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qresultstore.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthreadpool.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthread.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qrunnable.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qinputmethod.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLabel \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlabel.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qframe.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qpicture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextdocument.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QVBoxLayout
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\chatuserwid.o ..\zxnchat_copy\chatuserwid.cpp
 
 debug/clickedbtn.o: ../zxnchat_copy/clickedbtn.cpp ../zxnchat_copy/clickedbtn.h \
@@ -19174,7 +19513,38 @@ debug/conuseritem.o: ../zxnchat_copy/conuseritem.cpp ../zxnchat_copy/conuseritem
 		../zxnchat_copy/userdata.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QJsonArray \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qjsonarray.h \
-		ui_conuseritem.h
+		ui_conuseritem.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QApplication \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qeventloop.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfutureinterface.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qmutex.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qdeadlinetimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qelapsedtimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qtsan_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qresultstore.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthreadpool.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthread.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qrunnable.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qinputmethod.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLabel \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlabel.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qframe.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qpicture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextdocument.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\conuseritem.o ..\zxnchat_copy\conuseritem.cpp
 
 debug/customizeedit.o: ../zxnchat_copy/customizeedit.cpp ../zxnchat_copy/customizeedit.h \
@@ -19688,6 +20058,46 @@ debug/findfaildlg.o: ../zxnchat_copy/findfaildlg.cpp ../zxnchat_copy/findfaildlg
 		../../../Qt/6.6.3/mingw_64/include/QtGui/QTransform \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qnativeinterface.h \
 		ui_findfaildlg.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QVariant \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QApplication \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qeventloop.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfutureinterface.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qmutex.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qdeadlinetimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qelapsedtimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qtsan_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qresultstore.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthreadpool.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthread.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qrunnable.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qinputmethod.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qlocale.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLabel \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlabel.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qframe.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qpicture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextdocument.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QSpacerItem \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QVBoxLayout \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QWidget \
+		../zxnchat_copy/clickedbtn.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QPushButton \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractbutton.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\findfaildlg.o ..\zxnchat_copy\findfaildlg.cpp
 
@@ -19871,6 +20281,45 @@ debug/findsuccessdlg.o: ../zxnchat_copy/findsuccessdlg.cpp ../zxnchat_copy/finds
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QJsonObject \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qjsonobject.h \
 		ui_findsuccessdlg.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QVariant \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QApplication \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qeventloop.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfutureinterface.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qmutex.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qdeadlinetimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qelapsedtimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qtsan_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qresultstore.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthreadpool.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthread.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qrunnable.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qinputmethod.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLabel \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlabel.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qframe.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qpicture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextdocument.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QSpacerItem \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QVBoxLayout \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QWidget \
+		../zxnchat_copy/clickedbtn.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QPushButton \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractbutton.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QDir \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qdir.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qfile.h \
@@ -19879,13 +20328,7 @@ debug/findsuccessdlg.o: ../zxnchat_copy/findsuccessdlg.cpp ../zxnchat_copy/finds
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qtimezone.h \
 		../zxnchat_copy/applyfriend.h \
 		../zxnchat_copy/clickedlabel.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLabel \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlabel.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qframe.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qpicture.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextdocument.h \
 		../zxnchat_copy/global.h \
-		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QWidget \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QStyle \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qstyle.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QRegularExpression \
@@ -19897,7 +20340,6 @@ debug/findsuccessdlg.o: ../zxnchat_copy/findsuccessdlg.cpp ../zxnchat_copy/finds
 		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qnetworkrequest.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QSharedDataPointer \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QUrl \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/QVariant \
 		../../../Qt/6.6.3/mingw_64/include/QtNetwork/QSslConfiguration \
 		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qsslconfiguration.h \
 		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qsslsocket.h \
@@ -20099,6 +20541,44 @@ debug/friendinfopage.o: ../zxnchat_copy/friendinfopage.cpp ../zxnchat_copy/frien
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QJsonObject \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qjsonobject.h \
 		ui_friendinfopage.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QVariant \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QApplication \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qeventloop.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfutureinterface.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qmutex.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qdeadlinetimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qelapsedtimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qtsan_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qresultstore.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthreadpool.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthread.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qrunnable.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qinputmethod.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLabel \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlabel.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qframe.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qpicture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextdocument.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QSpacerItem \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QVBoxLayout \
+		../zxnchat_copy/clickedbtn.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QPushButton \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractbutton.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\friendinfopage.o ..\zxnchat_copy\friendinfopage.cpp
 
@@ -20268,6 +20748,80 @@ debug/friendlabel.o: ../zxnchat_copy/friendlabel.cpp ../zxnchat_copy/friendlabel
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qnativeinterface.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QString \
 		ui_friendlabel.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QVariant \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QApplication \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qeventloop.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfutureinterface.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qmutex.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qdeadlinetimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qelapsedtimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qtsan_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qresultstore.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthreadpool.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthread.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qrunnable.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qinputmethod.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qlocale.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLabel \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlabel.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qpicture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextdocument.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QWidget \
+		../zxnchat_copy/clickedlabel.h \
+		../zxnchat_copy/global.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QStyle \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qstyle.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QRegularExpression \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qregularexpression.h \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/QNetworkAccessManager \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qnetworkaccessmanager.h \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qtnetworkglobal.h \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qtnetwork-config.h \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qtnetworkexports.h \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qnetworkrequest.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QSharedDataPointer \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QUrl \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/QSslConfiguration \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qsslconfiguration.h \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qsslsocket.h \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qtcpsocket.h \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qabstractsocket.h \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qhostaddress.h \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qsslerror.h \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qsslcertificate.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcryptographichash.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qdatetime.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcalendar.h \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qssl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QFlags \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		../../../Qt/6.6.3/mingw_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QMetaType \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QJsonObject \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qjsonobject.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qjsonvalue.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcborvalue.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcborcommon.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/quuid.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qendian.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QJsonDocument \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qjsondocument.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QSettings \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qsettings.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\friendlabel.o ..\zxnchat_copy\friendlabel.cpp
 
@@ -20685,7 +21239,38 @@ debug/grouptipitem.o: ../zxnchat_copy/grouptipitem.cpp ../zxnchat_copy/grouptipi
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qjsondocument.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QSettings \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qsettings.h \
-		ui_grouptipitem.h
+		ui_grouptipitem.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QApplication \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qeventloop.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfutureinterface.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qmutex.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qdeadlinetimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qelapsedtimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qtsan_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qresultstore.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthreadpool.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthread.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qrunnable.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qinputmethod.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLabel \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlabel.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qframe.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qpicture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextdocument.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QVBoxLayout \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qgridlayout.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\grouptipitem.o ..\zxnchat_copy\grouptipitem.cpp
 
 debug/httpmgr.o: ../zxnchat_copy/httpmgr.cpp ../zxnchat_copy/httpmgr.h \
@@ -21317,7 +21902,35 @@ debug/lineitem.o: ../zxnchat_copy/lineitem.cpp ../zxnchat_copy/lineitem.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qjsondocument.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QSettings \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qsettings.h \
-		ui_lineitem.h
+		ui_lineitem.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QApplication \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qeventloop.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfutureinterface.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qmutex.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qdeadlinetimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qelapsedtimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qtsan_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qresultstore.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthreadpool.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthread.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qrunnable.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qinputmethod.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QFrame \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qframe.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QVBoxLayout \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qgridlayout.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\lineitem.o ..\zxnchat_copy\lineitem.cpp
 
 debug/listitembase.o: ../zxnchat_copy/listitembase.cpp ../zxnchat_copy/listitembase.h \
@@ -21708,9 +22321,9 @@ debug/loadingdlg.o: ../zxnchat_copy/loadingdlg.cpp ../zxnchat_copy/loadingdlg.h 
 		../../../Qt/6.6.3/mingw_64/include/QtGui/QTransform \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qnativeinterface.h \
 		ui_loadingdlg.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/QMovie \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qmovie.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qimagereader.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QVariant \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QApplication \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qapplication.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qeventloop.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
@@ -21727,6 +22340,23 @@ debug/loadingdlg.o: ../zxnchat_copy/loadingdlg.cpp ../zxnchat_copy/loadingdlg.h 
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qrunnable.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qinputmethod.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qlocale.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLabel \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlabel.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qframe.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qpicture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextdocument.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QVBoxLayout \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/QMovie \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qmovie.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qimagereader.h \
 		../../../Qt/6.6.3/mingw_64/include/QtGui/qimageiohandler.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qplugin.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qjsonobject.h \
@@ -21734,7 +22364,6 @@ debug/loadingdlg.o: ../zxnchat_copy/loadingdlg.cpp ../zxnchat_copy/loadingdlg.h 
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qcborvalue.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qdatetime.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qcalendar.h \
-		../../../Qt/6.6.3/mingw_64/include/QtCore/qlocale.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qcborcommon.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qregularexpression.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/quuid.h \
@@ -21952,6 +22581,50 @@ debug/logindialog.o: ../zxnchat_copy/logindialog.cpp ../zxnchat_copy/logindialog
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QDialog \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qdialog.h \
 		ui_logindialog.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QApplication \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qeventloop.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfutureinterface.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qmutex.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qdeadlinetimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qelapsedtimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qtsan_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qresultstore.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthreadpool.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthread.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qrunnable.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qinputmethod.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QGridLayout \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLabel \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlabel.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qframe.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qpicture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextdocument.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLineEdit \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlineedit.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextcursor.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextformat.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qpen.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextoption.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QPushButton \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QSpacerItem \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QVBoxLayout \
+		../zxnchat_copy/clickedlabel.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QDebug \
 		../zxnchat_copy/httpmgr.h \
 		../zxnchat_copy/singleton.h \
@@ -21961,8 +22634,6 @@ debug/logindialog.o: ../zxnchat_copy/logindialog.cpp ../zxnchat_copy/logindialog
 		../../../Qt/6.6.3/mingw_64/include/QtNetwork/QNetworkRequest \
 		../../../Qt/6.6.3/mingw_64/include/QtGui/QPainter \
 		../../../Qt/6.6.3/mingw_64/include/QtGui/qpainter.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextoption.h \
-		../../../Qt/6.6.3/mingw_64/include/QtGui/qpen.h \
 		../../../Qt/6.6.3/mingw_64/include/QtGui/QPainterPath \
 		../../../Qt/6.6.3/mingw_64/include/QtGui/qpainterpath.h \
 		../zxnchat_copy/tcpmgr.h \
@@ -22485,6 +23156,27 @@ debug/mainwindow.o: ../zxnchat_copy/mainwindow.cpp ../zxnchat_copy/mainwindow.h 
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qtabbar.h \
 		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qrubberband.h \
 		ui_mainwindow.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QApplication \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qeventloop.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfutureinterface.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qmutex.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qdeadlinetimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qelapsedtimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qtsan_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qresultstore.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthreadpool.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthread.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qrunnable.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qinputmethod.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication_platform.h \
 		../zxnchat_copy/tcpmgr.h \
 		../../../Qt/6.6.3/mingw_64/include/QtNetwork/QTcpSocket \
 		../zxnchat_copy/singleton.h
@@ -22699,6 +23391,55 @@ debug/registerdialog.o: ../zxnchat_copy/registerdialog.cpp ../zxnchat_copy/regis
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QSettings \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qsettings.h \
 		ui_registerdialog.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QApplication \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qeventloop.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfutureinterface.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qmutex.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qdeadlinetimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qelapsedtimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qtsan_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qresultstore.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthreadpool.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthread.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qrunnable.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qinputmethod.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLabel \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlabel.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qframe.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qpicture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextdocument.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLineEdit \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlineedit.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextcursor.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextformat.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qpen.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextoption.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QPushButton \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QSpacerItem \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QStackedWidget \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qstackedwidget.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QVBoxLayout \
+		../zxnchat_copy/clickedlabel.h \
+		../zxnchat_copy/timerbtn.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QTimer \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qtimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qbasictimer.h \
 		../zxnchat_copy/httpmgr.h \
 		../zxnchat_copy/singleton.h \
 		../../../Qt/6.6.3/mingw_64/include/QtNetwork/QNetworkReply \
@@ -22916,6 +23657,52 @@ debug/resetdialog.o: ../zxnchat_copy/resetdialog.cpp ../zxnchat_copy/resetdialog
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QSettings \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/qsettings.h \
 		ui_resetdialog.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QApplication \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qeventloop.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfutureinterface.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qmutex.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qdeadlinetimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qelapsedtimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qtsan_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qresultstore.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qfuture_impl.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthreadpool.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qthread.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qrunnable.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qinputmethod.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLabel \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlabel.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qframe.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qpicture.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextdocument.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QLineEdit \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qlineedit.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextcursor.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextformat.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qpen.h \
+		../../../Qt/6.6.3/mingw_64/include/QtGui/qtextoption.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QPushButton \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QSpacerItem \
+		../../../Qt/6.6.3/mingw_64/include/QtWidgets/QVBoxLayout \
+		../zxnchat_copy/timerbtn.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/QTimer \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qtimer.h \
+		../../../Qt/6.6.3/mingw_64/include/QtCore/qbasictimer.h \
 		../../../Qt/6.6.3/mingw_64/include/QtCore/QDebug \
 		../zxnchat_copy/httpmgr.h \
 		../zxnchat_copy/singleton.h \

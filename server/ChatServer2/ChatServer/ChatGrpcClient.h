@@ -44,8 +44,8 @@ public:
 	}
 
 	~ChatConPool() {
-		std::lock_guard<std::mutex> lock(mutex_);
 		Close();
+		std::lock_guard<std::mutex> lock(mutex_);
 		while (connections_.size()) {
 			connections_.pop();
 		}

@@ -29,12 +29,21 @@ private:
 	void RegisterCallBacks();
 	// 登录逻辑的处理
 	void LoginHandler(std::shared_ptr<CSession>, const short& msg_id, const std::string& msg_data);
+
+	// 获取好友列表
+	bool GetFriendList(int self_id, std::vector<std::shared_ptr<UserInfo>>& user_list);
+
+	// 得到还有申请信息的处理
+	bool GetFriendApplyInfo(int to_uid, std::vector<std::shared_ptr<ApplyInfo>>& list);
 	
 	// 查找好友逻辑的处理
 	void SearchUserHandler(std::shared_ptr<CSession> session, const short& msg_id, const std::string& msg_data);
 
 	// 申请好友逻辑的处理
 	void AddFriendApplyHandler(std::shared_ptr<CSession> session, const short& msg_id, const std::string& msg_data);
+
+	// 认证好友逻辑的处理
+	void AuthFriendApplyHandler(std::shared_ptr<CSession> session, const short& msg_id, const std::string& msg_data);
 
 	// 判断是不是纯数字
 	bool isPureDigit(const std::string& str);

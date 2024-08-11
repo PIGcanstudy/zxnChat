@@ -52,7 +52,7 @@ public:
 	}
 
 	void Close(){
-		b_stop_.store(false);
+		b_stop_.store(true);
 		cond_.notify_all();
 	}
 

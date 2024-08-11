@@ -169,7 +169,7 @@ void TcpMgr::initHandlers()
 
 		if (!jsonObj.contains("error")) {
 			int err = ErrorCodes::ERR_JSON;
-			qDebug() << "Login Failed, err is Json Parse Err" << err;
+            qDebug() << "ID_SEARCH_USER_RSP Failed, err is Json Parse Err" << err;
 
 			emit sig_user_search(nullptr);
 			return;
@@ -177,7 +177,7 @@ void TcpMgr::initHandlers()
 
 		int err = jsonObj["error"].toInt();
 		if (err != ErrorCodes::SUCCESS) {
-			qDebug() << "Login Failed, err is " << err;
+            qDebug() << "ID_SEARCH_USER_RSP Failed, err is " << err;
             emit sig_user_search(nullptr);
 			return;
 		}
@@ -204,7 +204,7 @@ void TcpMgr::initHandlers()
 
 		if (!jsonObj.contains("error")) {
 			int err = ErrorCodes::ERR_JSON;
-			qDebug() << "Login Failed, err is Json Parse Err" << err;
+            qDebug() << "ID_NOTIFY_ADD_FRIEND_REQ Failed, err is Json Parse Err" << err;
 
 			emit sig_user_search(nullptr);
 			return;
@@ -212,7 +212,7 @@ void TcpMgr::initHandlers()
 
 		int err = jsonObj["error"].toInt();
 		if (err != ErrorCodes::SUCCESS) {
-			qDebug() << "Login Failed, err is " << err;
+            qDebug() << "ID_NOTIFY_ADD_FRIEND_REQ Failed, err is " << err;
 			emit sig_user_search(nullptr);
 			return;
 		}

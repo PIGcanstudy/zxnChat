@@ -1215,6 +1215,7 @@ class AddFriendReq PROTOBUF_FINAL :
     kNickFieldNumber = 5,
     kApplyuidFieldNumber = 1,
     kSexFieldNumber = 6,
+    kTouidFieldNumber = 7,
   };
   // string name = 2;
   void clear_name();
@@ -1298,6 +1299,15 @@ class AddFriendReq PROTOBUF_FINAL :
   void _internal_set_sex(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
+  // int32 touid = 7;
+  void clear_touid();
+  ::PROTOBUF_NAMESPACE_ID::int32 touid() const;
+  void set_touid(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_touid() const;
+  void _internal_set_touid(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:message.AddFriendReq)
  private:
   class _Internal;
@@ -1311,6 +1321,7 @@ class AddFriendReq PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr nick_;
   ::PROTOBUF_NAMESPACE_ID::int32 applyuid_;
   ::PROTOBUF_NAMESPACE_ID::int32 sex_;
+  ::PROTOBUF_NAMESPACE_ID::int32 touid_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_message_2eproto;
 };
@@ -3869,6 +3880,26 @@ inline void AddFriendReq::_internal_set_sex(::PROTOBUF_NAMESPACE_ID::int32 value
 inline void AddFriendReq::set_sex(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_sex(value);
   // @@protoc_insertion_point(field_set:message.AddFriendReq.sex)
+}
+
+// int32 touid = 7;
+inline void AddFriendReq::clear_touid() {
+  touid_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 AddFriendReq::_internal_touid() const {
+  return touid_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 AddFriendReq::touid() const {
+  // @@protoc_insertion_point(field_get:message.AddFriendReq.touid)
+  return _internal_touid();
+}
+inline void AddFriendReq::_internal_set_touid(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  touid_ = value;
+}
+inline void AddFriendReq::set_touid(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_touid(value);
+  // @@protoc_insertion_point(field_set:message.AddFriendReq.touid)
 }
 
 // -------------------------------------------------------------------

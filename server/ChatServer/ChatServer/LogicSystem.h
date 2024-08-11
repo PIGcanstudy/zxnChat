@@ -33,6 +33,9 @@ private:
 	// 查找好友逻辑的处理
 	void SearchUserHandler(std::shared_ptr<CSession> session, const short& msg_id, const std::string& msg_data);
 
+	// 申请好友逻辑的处理
+	void AddFriendApplyHandler(std::shared_ptr<CSession> session, const short& msg_id, const std::string& msg_data);
+
 	// 判断是不是纯数字
 	bool isPureDigit(const std::string& str);
 

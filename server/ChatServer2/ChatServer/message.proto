@@ -50,6 +50,7 @@ message AddFriendReq {
 	string icon = 4;
 	string nick = 5;
 	int32  sex = 6;
+	int32  touid = 7;
 }
 
 message AddFriendRsp {

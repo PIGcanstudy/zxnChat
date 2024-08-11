@@ -44,15 +44,15 @@ public:
 	}
 
 	~ChatConPool() {
-		Close();
 		std::lock_guard<std::mutex> lock(mutex_);
+		Close();
 		while (connections_.size()) {
 			connections_.pop();
 		}
 	}
 
 	void Close(){
-		b_stop_.store(false);
+		b_stop_.store(true);
 		cond_.notify_all();
 	}
 

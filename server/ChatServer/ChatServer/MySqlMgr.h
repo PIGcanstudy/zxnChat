@@ -17,6 +17,8 @@ public:
 	bool UpdatePwd(const std::string& name, const std::string& pwd);
 	// 检查密码
 	bool CheckPwd(const std::string& email, const std::string& pwd, UserInfo& userinfo);
+	// 申请加好友模块
+	bool AddFriendApply(const int& from, const int& to);
 	// 获取user接口
 	std::shared_ptr<UserInfo> GetUser(int uid);
 	std::shared_ptr<UserInfo> GetUser(std::string& name);

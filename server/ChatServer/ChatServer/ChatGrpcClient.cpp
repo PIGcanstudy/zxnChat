@@ -35,6 +35,32 @@ ChatGrpcClient::ChatGrpcClient() {
 // 通知加好友接口
 AddFriendRsp ChatGrpcClient::NotifyAddFriend(std::string server_ip, const AddFriendReq& req) {
 	AddFriendRsp rsp;
+	Defer defer([&rsp, &req]() {
+		rsp.set_error(ErrorCodes::Success);
+		rsp.set_applyuid(req.applyuid());
+		rsp.set_touid(req.touid());
+		});
+
+	// 根据ip获取服务池
+	auto find_iter = pool_.find(server_ip);
+	if (find_iter == pool_.end()) {
+		return rsp;
+	}
+	auto& pool = find_iter->second;
+
+	// 调用对端相应的服务
+	ClientContext context;
+	auto stub = pool->GetConnection();
+	Status status = stub->NotifyAddFriend(&context, req, &rsp);
+	Defer defercon([&stub, this, &pool]() {
+		pool->ReturnConnections(std::move(stub));
+		});
+	if (!status.ok()) {
+		rsp.set_error(ErrorCodes::RPCFailed);
+		std::cout << "Service NotifyAddFriend failed!\n";
+		return rsp;
+	}
+	std::cout << "Service NotifyAddFriend succeed!\n";
 	return rsp;
 }
 

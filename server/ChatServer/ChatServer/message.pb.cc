@@ -385,6 +385,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_message_2eproto::offsets[] PRO
   PROTOBUF_FIELD_OFFSET(::message::AddFriendReq, icon_),
   PROTOBUF_FIELD_OFFSET(::message::AddFriendReq, nick_),
   PROTOBUF_FIELD_OFFSET(::message::AddFriendReq, sex_),
+  PROTOBUF_FIELD_OFFSET(::message::AddFriendReq, touid_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::message::AddFriendRsp, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -473,16 +474,16 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 29, -1, sizeof(::message::LoginReq)},
   { 36, -1, sizeof(::message::LoginRsp)},
   { 44, -1, sizeof(::message::AddFriendReq)},
-  { 55, -1, sizeof(::message::AddFriendRsp)},
-  { 63, -1, sizeof(::message::RplyFriendReq)},
-  { 71, -1, sizeof(::message::RplyFriendRsp)},
-  { 79, -1, sizeof(::message::SendChatMsgReq)},
-  { 87, -1, sizeof(::message::SendChatMsgRsp)},
-  { 95, -1, sizeof(::message::AuthFriendReq)},
-  { 102, -1, sizeof(::message::AuthFriendRsp)},
-  { 110, -1, sizeof(::message::TextChatMsgReq)},
-  { 118, -1, sizeof(::message::TextChatData)},
-  { 125, -1, sizeof(::message::TextChatMsgRsp)},
+  { 56, -1, sizeof(::message::AddFriendRsp)},
+  { 64, -1, sizeof(::message::RplyFriendReq)},
+  { 72, -1, sizeof(::message::RplyFriendRsp)},
+  { 80, -1, sizeof(::message::SendChatMsgReq)},
+  { 88, -1, sizeof(::message::SendChatMsgRsp)},
+  { 96, -1, sizeof(::message::AuthFriendReq)},
+  { 103, -1, sizeof(::message::AuthFriendRsp)},
+  { 111, -1, sizeof(::message::TextChatMsgReq)},
+  { 119, -1, sizeof(::message::TextChatData)},
+  { 126, -1, sizeof(::message::TextChatMsgRsp)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -514,41 +515,41 @@ const char descriptor_table_protodef_message_2eproto[] PROTOBUF_SECTION_VARIABLE
   "\004port\030\003 \001(\t\022\r\n\005token\030\004 \001(\t\"&\n\010LoginReq\022\013"
   "\n\003uid\030\001 \001(\005\022\r\n\005token\030\002 \001(\t\"5\n\010LoginRsp\022\r"
   "\n\005error\030\001 \001(\005\022\013\n\003uid\030\002 \001(\005\022\r\n\005token\030\003 \001("
-  "\t\"e\n\014AddFriendReq\022\020\n\010applyuid\030\001 \001(\005\022\014\n\004n"
+  "\t\"t\n\014AddFriendReq\022\020\n\010applyuid\030\001 \001(\005\022\014\n\004n"
   "ame\030\002 \001(\t\022\014\n\004desc\030\003 \001(\t\022\014\n\004icon\030\004 \001(\t\022\014\n"
-  "\004nick\030\005 \001(\t\022\013\n\003sex\030\006 \001(\005\">\n\014AddFriendRsp"
-  "\022\r\n\005error\030\001 \001(\005\022\020\n\010applyuid\030\002 \001(\005\022\r\n\005tou"
-  "id\030\003 \001(\005\">\n\rRplyFriendReq\022\017\n\007rplyuid\030\001 \001"
-  "(\005\022\r\n\005agree\030\002 \001(\010\022\r\n\005touid\030\003 \001(\005\">\n\rRply"
-  "FriendRsp\022\r\n\005error\030\001 \001(\005\022\017\n\007rplyuid\030\002 \001("
-  "\005\022\r\n\005touid\030\003 \001(\005\"A\n\016SendChatMsgReq\022\017\n\007fr"
-  "omuid\030\001 \001(\005\022\r\n\005touid\030\002 \001(\005\022\017\n\007message\030\003 "
-  "\001(\t\"\?\n\016SendChatMsgRsp\022\r\n\005error\030\001 \001(\005\022\017\n\007"
-  "fromuid\030\002 \001(\005\022\r\n\005touid\030\003 \001(\005\"/\n\rAuthFrie"
-  "ndReq\022\017\n\007fromuid\030\001 \001(\005\022\r\n\005touid\030\002 \001(\005\">\n"
-  "\rAuthFriendRsp\022\r\n\005error\030\001 \001(\005\022\017\n\007fromuid"
-  "\030\002 \001(\005\022\r\n\005touid\030\003 \001(\005\"Y\n\016TextChatMsgReq\022"
-  "\017\n\007fromuid\030\001 \001(\005\022\r\n\005touid\030\002 \001(\005\022\'\n\010textm"
-  "sgs\030\003 \003(\0132\025.message.TextChatData\"1\n\014Text"
-  "ChatData\022\r\n\005msgid\030\001 \001(\t\022\022\n\nmsgcontent\030\002 "
-  "\001(\t\"h\n\016TextChatMsgRsp\022\r\n\005error\030\001 \001(\005\022\017\n\007"
-  "fromuid\030\002 \001(\005\022\r\n\005touid\030\003 \001(\005\022\'\n\010textmsgs"
-  "\030\004 \003(\0132\025.message.TextChatData2P\n\rVarifyS"
-  "ervice\022\?\n\rGetVarifyCode\022\025.message.GetVar"
-  "ifyReq\032\025.message.GetVarifyRsp\"\0002\207\001\n\rStat"
-  "usService\022G\n\rGetChatServer\022\031.message.Get"
-  "ChatServerReq\032\031.message.GetChatServerRsp"
-  "\"\000\022-\n\005Login\022\021.message.LoginReq\032\021.message"
-  ".LoginRsp2\345\002\n\013ChatService\022A\n\017NotifyAddFr"
-  "iend\022\025.message.AddFriendReq\032\025.message.Ad"
-  "dFriendRsp\"\000\022A\n\rRplyAddFriend\022\026.message."
-  "RplyFriendReq\032\026.message.RplyFriendRsp\"\000\022"
-  "A\n\013SendChatMsg\022\027.message.SendChatMsgReq\032"
-  "\027.message.SendChatMsgRsp\"\000\022D\n\020NotifyAuth"
-  "Friend\022\026.message.AuthFriendReq\032\026.message"
-  ".AuthFriendRsp\"\000\022G\n\021NotifyTextChatMsg\022\027."
-  "message.TextChatMsgReq\032\027.message.TextCha"
-  "tMsgRsp\"\000b\006proto3"
+  "\004nick\030\005 \001(\t\022\013\n\003sex\030\006 \001(\005\022\r\n\005touid\030\007 \001(\005\""
+  ">\n\014AddFriendRsp\022\r\n\005error\030\001 \001(\005\022\020\n\010applyu"
+  "id\030\002 \001(\005\022\r\n\005touid\030\003 \001(\005\">\n\rRplyFriendReq"
+  "\022\017\n\007rplyuid\030\001 \001(\005\022\r\n\005agree\030\002 \001(\010\022\r\n\005toui"
+  "d\030\003 \001(\005\">\n\rRplyFriendRsp\022\r\n\005error\030\001 \001(\005\022"
+  "\017\n\007rplyuid\030\002 \001(\005\022\r\n\005touid\030\003 \001(\005\"A\n\016SendC"
+  "hatMsgReq\022\017\n\007fromuid\030\001 \001(\005\022\r\n\005touid\030\002 \001("
+  "\005\022\017\n\007message\030\003 \001(\t\"\?\n\016SendChatMsgRsp\022\r\n\005"
+  "error\030\001 \001(\005\022\017\n\007fromuid\030\002 \001(\005\022\r\n\005touid\030\003 "
+  "\001(\005\"/\n\rAuthFriendReq\022\017\n\007fromuid\030\001 \001(\005\022\r\n"
+  "\005touid\030\002 \001(\005\">\n\rAuthFriendRsp\022\r\n\005error\030\001"
+  " \001(\005\022\017\n\007fromuid\030\002 \001(\005\022\r\n\005touid\030\003 \001(\005\"Y\n\016"
+  "TextChatMsgReq\022\017\n\007fromuid\030\001 \001(\005\022\r\n\005touid"
+  "\030\002 \001(\005\022\'\n\010textmsgs\030\003 \003(\0132\025.message.TextC"
+  "hatData\"1\n\014TextChatData\022\r\n\005msgid\030\001 \001(\t\022\022"
+  "\n\nmsgcontent\030\002 \001(\t\"h\n\016TextChatMsgRsp\022\r\n\005"
+  "error\030\001 \001(\005\022\017\n\007fromuid\030\002 \001(\005\022\r\n\005touid\030\003 "
+  "\001(\005\022\'\n\010textmsgs\030\004 \003(\0132\025.message.TextChat"
+  "Data2P\n\rVarifyService\022\?\n\rGetVarifyCode\022\025"
+  ".message.GetVarifyReq\032\025.message.GetVarif"
+  "yRsp\"\0002\207\001\n\rStatusService\022G\n\rGetChatServe"
+  "r\022\031.message.GetChatServerReq\032\031.message.G"
+  "etChatServerRsp\"\000\022-\n\005Login\022\021.message.Log"
+  "inReq\032\021.message.LoginRsp2\345\002\n\013ChatService"
+  "\022A\n\017NotifyAddFriend\022\025.message.AddFriendR"
+  "eq\032\025.message.AddFriendRsp\"\000\022A\n\rRplyAddFr"
+  "iend\022\026.message.RplyFriendReq\032\026.message.R"
+  "plyFriendRsp\"\000\022A\n\013SendChatMsg\022\027.message."
+  "SendChatMsgReq\032\027.message.SendChatMsgRsp\""
+  "\000\022D\n\020NotifyAuthFriend\022\026.message.AuthFrie"
+  "ndReq\032\026.message.AuthFriendRsp\"\000\022G\n\021Notif"
+  "yTextChatMsg\022\027.message.TextChatMsgReq\032\027."
+  "message.TextChatMsgRsp\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_message_2eproto_deps[1] = {
 };
@@ -573,7 +574,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_mes
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_message_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_message_2eproto = {
-  false, false, descriptor_table_protodef_message_2eproto, "message.proto", 1697,
+  false, false, descriptor_table_protodef_message_2eproto, "message.proto", 1712,
   &descriptor_table_message_2eproto_once, descriptor_table_message_2eproto_sccs, descriptor_table_message_2eproto_deps, 17, 0,
   schemas, file_default_instances, TableStruct_message_2eproto::offsets,
   file_level_metadata_message_2eproto, 17, file_level_enum_descriptors_message_2eproto, file_level_service_descriptors_message_2eproto,
@@ -2119,8 +2120,8 @@ AddFriendReq::AddFriendReq(const AddFriendReq& from)
       GetArena());
   }
   ::memcpy(&applyuid_, &from.applyuid_,
-    static_cast<size_t>(reinterpret_cast<char*>(&sex_) -
-    reinterpret_cast<char*>(&applyuid_)) + sizeof(sex_));
+    static_cast<size_t>(reinterpret_cast<char*>(&touid_) -
+    reinterpret_cast<char*>(&applyuid_)) + sizeof(touid_));
   // @@protoc_insertion_point(copy_constructor:message.AddFriendReq)
 }
 
@@ -2131,8 +2132,8 @@ void AddFriendReq::SharedCtor() {
   icon_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   nick_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&applyuid_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&sex_) -
-      reinterpret_cast<char*>(&applyuid_)) + sizeof(sex_));
+      reinterpret_cast<char*>(&touid_) -
+      reinterpret_cast<char*>(&applyuid_)) + sizeof(touid_));
 }
 
 AddFriendReq::~AddFriendReq() {
@@ -2175,8 +2176,8 @@ void AddFriendReq::Clear() {
   icon_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   nick_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::memset(&applyuid_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&sex_) -
-      reinterpret_cast<char*>(&applyuid_)) + sizeof(sex_));
+      reinterpret_cast<char*>(&touid_) -
+      reinterpret_cast<char*>(&applyuid_)) + sizeof(touid_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2235,6 +2236,13 @@ const char* AddFriendReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
           sex_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int32 touid = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
+          touid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2318,6 +2326,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(6, this->_internal_sex(), target);
   }
 
+  // int32 touid = 7;
+  if (this->touid() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(7, this->_internal_touid(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2376,6 +2390,13 @@ size_t AddFriendReq::ByteSizeLong() const {
         this->_internal_sex());
   }
 
+  // int32 touid = 7;
+  if (this->touid() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_touid());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -2425,6 +2446,9 @@ void AddFriendReq::MergeFrom(const AddFriendReq& from) {
   if (from.sex() != 0) {
     _internal_set_sex(from._internal_sex());
   }
+  if (from.touid() != 0) {
+    _internal_set_touid(from._internal_touid());
+  }
 }
 
 void AddFriendReq::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -2453,8 +2477,8 @@ void AddFriendReq::InternalSwap(AddFriendReq* other) {
   icon_.Swap(&other->icon_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   nick_.Swap(&other->nick_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(AddFriendReq, sex_)
-      + sizeof(AddFriendReq::sex_)
+      PROTOBUF_FIELD_OFFSET(AddFriendReq, touid_)
+      + sizeof(AddFriendReq::touid_)
       - PROTOBUF_FIELD_OFFSET(AddFriendReq, applyuid_)>(
           reinterpret_cast<char*>(&applyuid_),
           reinterpret_cast<char*>(&other->applyuid_));

@@ -124,6 +124,8 @@ void ChatPage::on_send_btn_clicked()
             QString uuidString = uuid.toString();
 
             pBubble = new TextBubble(role, msgList[i].content);
+
+            // 大于1024就发
             if(txt_size + msgList[i].content.length()> 1024){
                 textObj["fromuid"] = user_info->_uid;
                 textObj["touid"] = _user_info->_uid;
@@ -158,7 +160,7 @@ void ChatPage::on_send_btn_clicked()
         {
 
         }
-        //发送消息
+        // 长度不够1024就发送消息
         if(pBubble != nullptr)
         {
             pChatItem->setWidget(pBubble);

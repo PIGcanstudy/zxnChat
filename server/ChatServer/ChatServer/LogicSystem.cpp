@@ -94,6 +94,10 @@ void LogicSystem::RegisterCallBacks() {
 	// 认证好友模块
 	_fun_callbacks[ID_AUTH_FRIEND_REQ] = std::bind(&LogicSystem::AuthFriendApplyHandler, this,
 		placeholders::_1, placeholders::_2, placeholders::_3);
+
+	// 收发信息模块
+	_fun_callbacks[ID_TEXT_CHAT_MSG_REQ] = std::bind(&LogicSystem::DealChatTextMsgHandler, this,
+		placeholders::_1, placeholders::_2, placeholders::_3);
 }
 
 void LogicSystem::LoginHandler(std::shared_ptr<CSession> session, const short& msg_id, const std::string& msg_data) {
@@ -413,6 +417,71 @@ void LogicSystem::AuthFriendApplyHandler(std::shared_ptr<CSession> session, cons
 
 	//发送通知
 	ChatGrpcClient::GetInstance()->NotifyAuthFriend(to_ip_value, auth_req);
+}
+
+void LogicSystem::DealChatTextMsgHandler(std::shared_ptr<CSession> session, const short& msg_id, const std::string& msg_data)
+{
+	Json::Reader reader;
+	Json::Value root;
+
+	reader.parse(msg_data, root);
+
+	auto uid = root["fromuid"].asInt();
+	auto touid = root["touid"].asInt();
+	const Json::Value arrays = root["text_array"];
+
+	Json::Value rtvalue;
+	rtvalue["error"] = ErrorCodes::Success;
+	rtvalue["text_array"] = arrays;
+	rtvalue["fromuid"] = uid;
+	rtvalue["touid"] = touid;
+
+	// 发送响应
+	Defer defer([this, &rtvalue, session]() {
+		std::string return_str = rtvalue.toStyledString();
+		session->Send(return_str, ID_TEXT_CHAT_MSG_RSP);
+		});
+
+	// 从redis中查询 touid也就是对端所在服务器
+	auto to_str = std::to_string(touid);
+	auto to_ip_key = USERIPPREFIX + to_str;
+	std::string to_ip_value = "";
+	bool b_ip = RedisMgr::GetInstance()->Get(to_ip_key, to_ip_value);
+	if (!b_ip) {
+		return;
+	}
+
+	// 从config中看自己的服务器名字
+	auto& cfg = ConfigMgr::GetInstance();
+	auto self_name = cfg["SelfServer"]["Name"];
+
+	// 如果在同一个服务器直接通知对方有认证通过消息
+	if (to_ip_value == self_name) {
+		auto session = UserMgr::GetInstance()->GetSession(touid);
+		if (session) {
+			//在内存中则直接发送通知对方
+			std::string return_str = rtvalue.toStyledString();
+			session->Send(return_str, ID_NOTIFY_TEXT_CHAT_MSG_REQ);
+		}
+
+		return;
+	}
+
+	// 如果不在同一个服务器
+	TextChatMsgReq text_msg_req;
+	text_msg_req.set_fromuid(uid);
+	text_msg_req.set_touid(touid);
+	for (const auto& txt_obj : arrays) {
+		auto content = txt_obj["content"].asString();
+		auto msgid = txt_obj["msgid"].asString();
+		std::cout << "content is " << content << std::endl;
+		std::cout << "msgid is " << msgid << std::endl;
+		auto* text_msg = text_msg_req.add_textmsgs();
+		text_msg->set_msgid(msgid);
+		text_msg->set_msgcontent(content);
+	}
+
+	ChatGrpcClient::GetInstance()->NotifyTextChatMsg(to_ip_value, text_msg_req, rtvalue);
 }
 
 bool LogicSystem::isPureDigit(const std::string& str)

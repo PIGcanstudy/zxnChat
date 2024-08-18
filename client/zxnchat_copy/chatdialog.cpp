@@ -65,8 +65,7 @@ ChatDialog::ChatDialog(QWidget *parent) :
     addChatUserList();
 
     //模拟加载自己头像
-   // QString head_icon = UserMgr::GetInstance()->GetIcon();
-    QString head_icon = ":/res/head_1.jpg";
+    QString head_icon = UserMgr::GetInstance()->GetIcon();
     QPixmap pixmap(head_icon); // 加载图片
     QPixmap scaledPixmap = pixmap.scaled( ui->side_head_lb->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation); // 将图片缩放到label的大小
     ui->side_head_lb->setPixmap(scaledPixmap); // 将缩放后的图片设置到QLabel上
@@ -145,6 +144,7 @@ ChatDialog::ChatDialog(QWidget *parent) :
     connect(TcpMgr::GetInstance().get(), &TcpMgr::sig_text_chat_msg,
             this, &ChatDialog::slot_text_chat_msg);
 
+    // 进行消息缓存
     connect(ui->chat_page, &ChatPage::sig_append_send_chat_msg, this, &ChatDialog::slot_append_send_chat_msg);
 }
 
@@ -302,6 +302,9 @@ void ChatDialog::slot_append_send_chat_msg(std::shared_ptr<TextChatData> msgdata
         auto user_info = con_item->GetUserInfo();
         user_info->_chat_msgs.push_back(msgdata);
 
+        std::vector<std::shared_ptr<TextChatData>> msg_vec;
+        msg_vec.push_back(msgdata);
+        UserMgr::GetInstance()->AppendFriendChatMsg(_cur_chat_uid, msg_vec);
         return;
     }
 }

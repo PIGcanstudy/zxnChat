@@ -45,6 +45,9 @@ private:
 	// 认证好友逻辑的处理
 	void AuthFriendApplyHandler(std::shared_ptr<CSession> session, const short& msg_id, const std::string& msg_data);
 
+	// 处理接收到的信息逻辑处理
+	void DealChatTextMsgHandler(std::shared_ptr<CSession> session, const short& msg_id, const std::string& msg_data);
+
 	// 判断是不是纯数字
 	bool isPureDigit(const std::string& str);
 

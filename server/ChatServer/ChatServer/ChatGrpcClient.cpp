@@ -145,5 +145,42 @@ bool ChatGrpcClient::GetBaseInfo(std::string base_key, int uid, std::shared_ptr<
 // 通知有文本聊天消息需要发送
 TextChatMsgRsp ChatGrpcClient::NotifyTextChatMsg(std::string server_ip, const TextChatMsgReq& req, const Json::Value& rtvalue) {
 	TextChatMsgRsp rsp;
+	rsp.set_error(ErrorCodes::Success);
+
+	// 设置响应给调用客户端的函数
+	Defer defer([&rsp, &req]() {
+		rsp.set_fromuid(req.fromuid());
+		rsp.set_touid(req.touid());
+		for (const auto& text_data : req.textmsgs()) {
+			TextChatData* new_msg = rsp.add_textmsgs();
+			new_msg->set_msgid(text_data.msgid());
+			new_msg->set_msgcontent(text_data.msgcontent());
+		}
+		});
+
+	// 找服务器ip对应的连接池
+	auto find_iter = pool_.find(server_ip);
+	if (find_iter == pool_.end()) {
+		return rsp;
+	}
+
+	auto& pool = find_iter->second;
+	ClientContext context;
+	// 从连接池中获取一个stub
+	auto stub = pool->GetConnection();
+	// 通过stub调用gRPC服务端
+	Status status = stub->NotifyTextChatMsg(&context, req, &rsp);
+	
+	// 用完返回
+	Defer defercon([&stub, this, &pool]() {
+		pool->ReturnConnections(std::move(stub));
+		});
+
+	// 调用不成功就设置错误码
+	if (!status.ok()) {
+		rsp.set_error(ErrorCodes::RPCFailed);
+		return rsp;
+	}
+
 	return rsp;
 }

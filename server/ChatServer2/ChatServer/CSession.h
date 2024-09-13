@@ -25,6 +25,8 @@ class LogicSystem;
 class CSession: public std::enable_shared_from_this<CSession>
 {
 public:
+	using Clock = std::chrono::system_clock;
+	using TimePoint = std::chrono::time_point<Clock>;
 	CSession(boost::asio::io_context& io_context, CServer* server);
 	~CSession();
 	tcp::socket& GetSocket();
@@ -40,6 +42,17 @@ public:
 	void AsyncReadBody(int length);
 	// 异步读取头部节点
 	void AsyncReadHead(int total_len);
+
+	// 更新心跳时间
+	void updateHeartbeat();
+
+	// 获取上一次心跳的时间
+	void GetLastHeartbeat() const;
+
+	// 检查是否超时
+	bool isTimedOut(int timeout_seconds) const;
+
+
 private:
 	void asyncReadFull(std::size_t maxLength, std::function<void(const boost::system::error_code& , std::size_t)> handler);
 	void asyncReadLen(std::size_t  read_len, std::size_t total_len,
@@ -68,6 +81,10 @@ private:
 	bool _b_head_parse;
 	//收到的头部结构
 	std::shared_ptr<MsgNode> _recv_head_node;
+
+	// Session对应上一次客户端发送心跳信息的时间
+	TimePoint last_heartbeat_time;
+
 };
 
 class LogicNode {

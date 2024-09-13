@@ -10,6 +10,7 @@
 #include "ConfigMgr.h"
 #include "RedisMgr.h"
 #include "ChatServiceImpl.h"
+#include "TimeWheel.h"
 
 bool bstop = false;
 std::condition_variable cond_quit;
@@ -21,6 +22,9 @@ int main()
 		auto &cfg = ConfigMgr::GetInstance();
 		auto server_name = cfg["SelfServer"]["Name"];
 		auto pool = AsioIOServicePool::GetInstance();
+
+		// 启动时间轮
+		TimeWheel::GetIntance().Start();
 
 		//将登录数设置为0
 		RedisMgr::GetInstance()->HSet(LOGIN_COUNT, server_name, "0");
@@ -51,6 +55,7 @@ int main()
 			});
 		auto port_str = cfg["SelfServer"]["Port"];
 		CServer s(io_context, atoi(port_str.c_str()));
+		s.startHeartbeatMonitor(45, 60);
 		io_context.run();
 
 		RedisMgr::GetInstance()->HDel(LOGIN_COUNT, server_name);

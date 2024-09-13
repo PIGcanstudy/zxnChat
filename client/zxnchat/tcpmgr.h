@@ -19,6 +19,7 @@ private:
     TcpMgr();
     void initHandlers();
     void handleMsg(ReqId id, int len, QByteArray data);
+    void sendHeartbeat();
     QTcpSocket _socket;
     QString _host;
     uint16_t _port;
@@ -26,6 +27,7 @@ private:
     bool _b_recv_pending;
     quint16 _message_id;
     quint16 _message_len;
+    QTimer* heartbeatTimer; // 心跳机制的计时器
     QMap<ReqId, std::function<void(ReqId id, int len, QByteArray data)>> _handlers;
 public slots:
     void slot_tcp_connect(ServerInfo);

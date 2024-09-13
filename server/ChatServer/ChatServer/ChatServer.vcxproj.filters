@@ -72,6 +72,12 @@
     <ClCompile Include="ChatServiceImpl.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="TimeWheel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TimedTasksQueue.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CServer.h">
@@ -135,6 +141,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="ChatServiceImpl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeWheel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TimedTasksQueue.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -158,6 +158,8 @@ xcopy $(ProjectDir)*.dll   $(SolutionDir)$(Platform)\$(Configuration)\   /y</Com
     <ClCompile Include="RedisMgr.cpp" />
     <ClCompile Include="StatusGrpcClient.cpp" />
     <ClCompile Include="ThreadPool.cpp" />
+    <ClCompile Include="TimedTasksQueue.cpp" />
+    <ClCompile Include="TimeWheel.cpp" />
     <ClCompile Include="UserMgr.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +183,8 @@ xcopy $(ProjectDir)*.dll   $(SolutionDir)$(Platform)\$(Configuration)\   /y</Com
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="StatusGrpcClient.h" />
     <ClInclude Include="ThreadPool.h" />
+    <ClInclude Include="TimedTasksQueue.h" />
+    <ClInclude Include="TimeWheel.h" />
     <ClInclude Include="UserMgr.h" />
   </ItemGroup>
   <ItemGroup>

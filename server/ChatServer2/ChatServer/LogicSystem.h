@@ -23,6 +23,7 @@ public:
 	void PostMsgToQue(std::shared_ptr < LogicNode> msg);
 private:
 	LogicSystem();
+
 	// 处理信息
 	void DealMsg();
 	//注册功能

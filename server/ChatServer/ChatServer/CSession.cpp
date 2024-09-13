@@ -6,6 +6,7 @@
 #include <json/value.h>
 #include <json/reader.h>
 #include "LogicSystem.h"
+#include "TimeWheel.h"
 
 // 生成uuid和构造头节点
 CSession::CSession(boost::asio::io_context& io_context, CServer* server):
@@ -86,6 +87,7 @@ void CSession::Send(char* msg, short max_length, short msgid) {
 }
 
 void CSession::Close() {
+	if (_b_close) return;
 	_socket.close();
 	_b_close = true;
 }
@@ -168,9 +170,8 @@ void CSession::AsyncReadHead(int total_len)
 			std::cout << "msg_id is " << msg_id << endl;
 
 			//id非法
-			if (msg_id > MAX_LENGTH) {
+			if (msg_id > MAX_LENGTH && msg_id != ID_HEARTBEAT) {
 				std::cout << "invalid msg_id is " << msg_id << endl;
-
 				_server->ClearSession(_session_uuid);
 				return;
 			}
@@ -195,13 +196,33 @@ void CSession::AsyncReadHead(int total_len)
 			// 构造头部节点
 			_recv_msg_node = make_shared<RecvNode>(msg_len, msg_id);
 
-			// 开始读实际数据
-			AsyncReadBody(msg_len);
+			if (msg_id == ID_HEARTBEAT) { // 心跳消息没有实际数据
+				updateHeartbeat();
+				AsyncReadHead(HEAD_TOTAL_LEN);
+			}
+			else AsyncReadBody(msg_len); // 开始读实际数据
 		}
 		catch (std::exception& e) {
 			std::cout << "Exception code is " << e.what() << endl;
 		}
 		});
+}
+
+void CSession::updateHeartbeat(){
+	last_heartbeat_time = std::chrono::system_clock::now();
+}
+
+void CSession::GetLastHeartbeat() const {
+	auto now = std::chrono::system_clock::now();
+	auto duration = std::chrono::duration_cast<std::chrono::seconds>(now - last_heartbeat_time).count();
+	std::cout << "Last heartbeat was " << duration << " seconds ago.\n";
+}
+
+bool CSession::isTimedOut(int timeout_seconds) const {
+	auto now = std::chrono::system_clock::now();
+	auto duration = std::chrono::duration_cast<std::chrono::seconds>(now - last_heartbeat_time).count();
+	std::cout << duration << std::endl;
+	return duration > timeout_seconds;
 }
 
 void CSession::HandleWrite(const boost::system::error_code& error, std::shared_ptr<CSession> shared_self) {
@@ -219,8 +240,10 @@ void CSession::HandleWrite(const boost::system::error_code& error, std::shared_p
 		}
 		else {
 			std::cout << "handle write failed, error is " << error.what() << endl;
-			Close();
-			_server->ClearSession(_session_uuid);
+			if (!_b_close) {
+				Close();
+				_server->ClearSession(_session_uuid);
+			}
 		}
 	}
 	catch (std::exception& e) {

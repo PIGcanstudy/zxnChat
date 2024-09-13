@@ -10,6 +10,7 @@
 #include "ConfigMgr.h"
 #include "RedisMgr.h"
 #include "ChatServiceImpl.h"
+#include "TimeWheel.h"
 
 bool bstop = false;
 std::condition_variable cond_quit;
@@ -22,18 +23,20 @@ int main()
 		auto server_name = cfg["SelfServer"]["Name"];
 		auto pool = AsioIOServicePool::GetInstance();
 
+		// 启动时间轮
+		TimeWheel::GetIntance().Start();
+
 		//将登录数设置为0
 		RedisMgr::GetInstance()->HSet(LOGIN_COUNT, server_name, "0");
 
 		//定义一个GrpcServer
+
 		std::string server_address(cfg["SelfServer"]["Host"] + ":" + cfg["SelfServer"]["RPCPort"]);
 		ChatServiceImpl service;
 		grpc::ServerBuilder builder;
-
 		// 监听端口和添加服务
 		builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
 		builder.RegisterService(&service);
-
 		// 构建并启动gRPC服务器
 		std::unique_ptr<grpc::Server> server(builder.BuildAndStart());
 		std::cout << "RPC Server listening on " << server_address << std::endl;
@@ -52,9 +55,9 @@ int main()
 			});
 		auto port_str = cfg["SelfServer"]["Port"];
 		CServer s(io_context, atoi(port_str.c_str()));
+		s.startHeartbeatMonitor(45, 60);
 		io_context.run();
 
-		// 服务器关闭后的操作
 		RedisMgr::GetInstance()->HDel(LOGIN_COUNT, server_name);
 		RedisMgr::GetInstance()->Close();
 		grpc_server_thread.join();
